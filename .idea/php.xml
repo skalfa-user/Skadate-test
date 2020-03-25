@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/behat/mink" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/behat/mink-selenium2-driver" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/behat/mink-extension" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/instaclick/php-webdriver" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/container-interop/container-interop" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/behat/behat" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/composer" />
+    </include_path>
+  </component>
+</project>

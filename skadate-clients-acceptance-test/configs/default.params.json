@@ -1,0 +1,27 @@
+{
+    "skadate_config": "../ow_includes/config.php",
+    "live_desktop_url": "http://test.com",
+    "live_firebird_url": "http://test.com/ow_static/plugins/skmobileapp/src/index.html?",
+    "mario_url": "http://test.com/mario.php",
+    "fixturesPath": "./fixtures/",
+    "default_profile": {
+        "birthdate": "1980-01-01",
+        "realname": "Tester",
+        "match_age": "27-89",
+        "about": "About tester",
+        "email": "tester@tester.com",
+        "match_sex": 3,
+        "sex": "female",
+        "role": "12"
+    },
+    "account_types": {
+        "male": {
+            "sex": 1,
+            "hash": "808aa8ca354f51c5a3868dad5298cd72"
+        },
+        "female": {
+            "sex": 2,
+            "hash": "8cc28eaddb382d7c6a94aeea9ec029fb"
+        }
+    }
+}

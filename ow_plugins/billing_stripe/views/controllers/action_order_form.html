@@ -1,0 +1,117 @@
+{style}
+    {literal}
+    .ow_credit_card {
+        margin-bottom: 32px;
+        border-radius: 6px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+    }
+    .ow_credit_card .ow_table_3 {
+        padding: 0px 14px;
+    }
+    .ow_credit_card .ow_box_empty {
+        padding-left: 14px;
+    }
+    .ow_credit_card .ow_box_empty .ow_outline {
+        font-weight: normal;
+    }
+    .ow_credit_card th {
+        background: none;
+        padding: 8px 0px;
+        text-align: left;
+    }
+    .ow_credit_card .ow_table_3 td {
+        border: none;
+        padding: 30px 17px 0px;
+    }
+    .ow_credit_card .ow_table_3 td.ow_label {
+        vertical-align: middle;
+        text-align: left;
+        width: 25%;
+    }
+    .ow_credit_card .ow_table_3 td.ow_value {
+        width: auto;
+    }
+    .ow_credit_card select ~ select {
+        margin-left: 32px;
+    }
+    {/literal}
+{/style}
+
+<div class="ow_superwide ow_automargin">
+<form method="post" id="{$formId}" action="{$formAction}">
+{block_decorator name='box' capEnabled=false addClass='ow_credit_card ow_break_word'}
+    <span class="ow_outline">{$productString}</span>
+
+    <table class="ow_table_3 ow_credit_card">
+        <tbody>
+        <tr class="ow_tr_first">
+            <th colspan="2">{text key='billingstripe+card_details'}</th>
+        </tr>
+        <tr>
+            <td class="ow_label">{text key='billingstripe+card_number'}</td>
+            <td class="ow_value"><input type="text" size="20" autocomplete="off" class="c-number" /></td>
+        </tr>
+        <tr>
+            <td class="ow_label">{text key='billingstripe+cvc'}</td>
+            <td class="ow_value"><input type="text" maxlength="4" class="c-cvc" style="width: 40px;"></td>
+        </tr>
+        <tr>
+            <td class="ow_label">{text key='billingstripe+expiration_date'}</td>
+            <td class="ow_value">
+                <select class="c-expiry-month" style="width: 80px;">
+                    <option>{text key='base+month'}</option>
+                    {section name='m' loop=13 start=1}<option value="{$smarty.section.m.iteration}">{$smarty.section.m.iteration}</option>{/section}
+                </select>
+                <select class="c-expiry-year" style="width: 80px;">
+                    <option>{text key='base+year'}</option>
+                    {section name='y' loop=$endYear start=$startYear}<option value="{$smarty.section.y.index}">{$smarty.section.y.index}</option>{/section}
+                </select>
+            </td>
+        </tr>
+        <tr class="ow_tr_last">
+            <td class="ow_label">{text key='billingstripe+name_on_card'}</td>
+            <td class="ow_value"><input type="text" autocomplete="off" class="c-name" /></td>
+        </tr>
+        </tbody>
+    </table>
+    {if $requireData}
+    <table class="ow_table_3 ow_credit_card ow_billing_info">
+        <tbody>
+        <tr class="ow_tr_first">
+            <th colspan="2">{text key='billingstripe+billing_info'}</th>
+        </tr>
+        <tr>
+            <td class="ow_label">{text key='billingstripe+country'}</td>
+            <td class="ow_value">
+                <select class="billing-country">
+                    <option value="">{text key='billingstripe+choose_country'}</option>
+                    {foreach from=$countries item='label' key='code'}
+                    <option value="{$code}">{$label}</option>
+                    {/foreach}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="ow_label">{text key='billingstripe+state'}</td>
+            <td class="ow_value"><input type="text" class="billing-state"></td>
+        </tr>
+        <tr>
+            <td class="ow_label">{text key='billingstripe+address'}</td>
+            <td class="ow_value"><input type="text" class="billing-address1"></td>
+        </tr>
+        <tr class="ow_tr_last">
+            <td class="ow_label">{text key='billingstripe+zip_code'}</td>
+            <td class="ow_value"><input type="text" class="billing-zip" style="width: 80px;" /></td>
+        </tr>
+        </tbody>
+    </table>
+    {/if}
+{/block_decorator}
+<div class="clearfix">
+    <div class="ow_right">
+        {decorator name='button' type='submit' langLabel='billingstripe+complete_order' id='btn-stripe-checkout'}
+    </div>
+</div>
+</form>
+</div>

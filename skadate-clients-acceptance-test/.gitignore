@@ -1,0 +1,6 @@
+composer.lock
+vendor/*
+screenshots/*
+selenium/*
+!screenshots/.htaccess
+npm-debug.log
