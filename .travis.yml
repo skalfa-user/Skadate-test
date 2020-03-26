@@ -1,0 +1,104 @@
+language: php
+
+sudo: false
+dist: trusty
+
+notifications:
+  email: false
+  slack: skalfa:0uQn1dLCuoqnj2GfYe5IQVum
+
+branches:
+  only:
+  - master
+
+php:
+  - 7
+
+services:
+  - mysql
+  
+env: 
+ global:
+   - "ARTIFACTS_BUCKET=ci-logs-skadate"
+   - "ARTIFACTS_KEY=AKIAIFCWMHZVL4DUMZ2A"
+   - "ARTIFACTS_SECRET=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"
+   - "DB_NAME=skadate"
+   - "TESTS_DIR=$TRAVIS_BUILD_DIR/skadate-clients-acceptance-test"
+   - "TESTS_CONFIG=$TESTS_DIR/configs"
+   - "FIREBIRD_DIR=$TRAVIS_BUILD_DIR/ow_plugins/skmobileapp"
+
+cache:
+  apt: true
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/.npm
+    - $TESTS_DIR/vendor
+    - $FIREBIRD_DIR/application/node_modules
+    - $FIREBIRD_DIR/application/plugins
+
+apt:
+    packages:
+      - xvfb 
+
+addons:
+  apt:
+    update: true
+    sources:
+      - google-chrome
+    packages:
+      - dpkg
+      - google-chrome-stable
+
+before_install:
+  - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  - sudo apt-get update
+
+install:
+  - nvm install 6.9.3
+  - nvm use 6.9.3
+  - sudo apt-get install google-chrome-stable apache2 libapache2-mod-fastcgi 
+  - sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
+  - sudo a2enmod rewrite actions fastcgi alias
+  - echo "cgi.fix_pathinfo = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - sudo sed -i -e "s,www-data,travis,g" /etc/apache2/envvars
+  - sudo chown -R travis:travis /var/lib/apache2/fastcgi
+  - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm -d sendmail_path=/bin/true -d opcache.enable=0
+  - sudo cp -f "$TESTS_CONFIG/travis-ci-apache" /etc/apache2/sites-available/000-default.conf
+  - sudo cp -f "$TESTS_CONFIG/skadate_config.php" ./ow_includes/config.php
+  - sudo cp -f "$TESTS_CONFIG/firebird.application.config.json" $FIREBIRD_DIR/application/application.config.json
+  - sudo cp -f "$TESTS_CONFIG/firebird.index.tmpl.html" $FIREBIRD_DIR/application/src/index.tmpl.html
+  - sudo cp -f "$TESTS_CONFIG/firebird.error.handler.ts" $FIREBIRD_DIR/application/src/services/error-handler/index.ts
+  - sudo cp -f "$FIREBIRD_DIR/application/package.tmpl.json" $FIREBIRD_DIR/application/package.json
+  - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/000-default.conf
+  - mysql -e "create database IF NOT EXISTS $DB_NAME;" -uroot
+  - mysql -uroot $DB_NAME < ./db_dump/dump.sql
+  - composer config -g github-oauth.github.com aee305e82f6dc58bdc19e67a069068a468e44b7a
+  - cd $FIREBIRD_DIR
+  - composer install
+  - cd application
+  - npm run setup_ci
+  - npm run prepare_ci
+  - cd $TESTS_DIR
+  - chmod 777 ./install.sh && ./install.sh
+
+before_script:
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+  - sudo service apache2 restart
+  - cd $FIREBIRD_DIR/application
+  - npm run browser &
+  - cd $TESTS_DIR
+  - chmod 777 ./bin/selenium.sh && ./bin/selenium.sh &
+  - sleep 10
+
+script:
+  - cd $FIREBIRD_DIR/application
+  - npm run test-ci
+  - cd $TESTS_DIR
+  - ./bin/behat --suite="desktop" --tags "@work"
+  - ./bin/behat --suite="firebird" --tags "@work"
+
+after_failure:
+  - artifacts upload --target-paths "${TRAVIS_REPO_SLUG}/${TRAVIS_BUILD_NUMBER}" ./screenshots/ ./ow_log/error.log
