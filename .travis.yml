@@ -48,7 +48,6 @@ addons:
       - google-chrome
     packages:
       - dpkg
-      - google-chrome-stable
 
 before_install:
   - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
