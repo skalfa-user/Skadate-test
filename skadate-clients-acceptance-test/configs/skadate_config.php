@@ -8,7 +8,7 @@ define('OW_DB_PASSWORD', '');
 define('OW_DB_PORT', null);
 define('OW_DB_NAME', 'skadate');
 
-define('OW_DB_PREFIX', 'sk_');
+define('OW_DB_PREFIX', 'ow_');
 
 define('OW_DIR_USERFILES', OW_DIR_ROOT.'ow_userfiles'.DS);
 define('OW_DIR_STATIC', OW_DIR_ROOT.'ow_static'.DS);
