@@ -1,7 +1,6 @@
 Feature: Group
     Test everything related with the main group functionality like create, delete etc.
 
-    @work
     Scenario: Create
         Given I am a logged user with id "1" and username "tester"
         When I am on "groups"
