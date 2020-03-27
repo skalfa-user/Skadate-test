@@ -1,6 +1,6 @@
 Feature: User
     Test everything related with the main users functionality like join, login, search, etc
-    @work
+
     Scenario: Login
         Given Created user with id "1" and username "tester" and password "tester" and email "test@test.com"
         When I am on the app
