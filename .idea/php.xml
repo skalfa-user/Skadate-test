@@ -27,6 +27,7 @@
       <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/psr/container" />
       <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/composer" />
+      <path value="$PROJECT_DIR$/skadate-clients-acceptance-test/vendor/psr/event-dispatcher" />
     </include_path>
   </component>
 </project>
