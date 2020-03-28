@@ -27,6 +27,7 @@ define('DS', DIRECTORY_SEPARATOR);
 
 define('OW_DIR_ROOT', dirname(__FILE__) . DS);
 
+
 require_once(OW_DIR_ROOT . 'ow_includes' . DS . 'init.php');
 
 if ( !defined('OW_ERROR_LOG_ENABLE') || (bool) OW_ERROR_LOG_ENABLE )
