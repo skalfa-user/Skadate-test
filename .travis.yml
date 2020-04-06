@@ -1,7 +1,7 @@
 language: php
 
 sudo: false
-dist: xenial
+dist: trusty
 
 notifications:
   email: false
@@ -38,9 +38,7 @@ apt:
       - xvfb
 
 addons:
-  apt:
-    update: true
-    chrome: 81
+    chrome: stable
 
 before_install:
   - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
