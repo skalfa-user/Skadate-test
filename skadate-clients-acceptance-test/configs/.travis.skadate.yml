@@ -37,6 +37,7 @@ apt:
       - xvfb 
 
 addons:
+  chrome: stable
   apt:
     update: true
     sources:
