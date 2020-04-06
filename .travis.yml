@@ -7,8 +7,6 @@ notifications:
   email: false
   slack: skalfa:0uQn1dLCuoqnj2GfYe5IQVum
 
-os: osx
-
 branches:
   only:
   - master
