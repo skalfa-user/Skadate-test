@@ -1,7 +1,7 @@
 language: php
 
 sudo: false
-dist: trusty
+dist: xenial
 
 notifications:
   email: false
@@ -48,7 +48,6 @@ addons:
 before_install:
   - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
   - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  - sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
   - sudo apt-get update
 
 install:
