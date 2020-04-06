@@ -40,10 +40,6 @@ addons:
   apt:
     update: true
     chrome: stable
-    sources:
-      - google-chrome
-    packages:
-      - dpkg
 
 before_install:
   - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
