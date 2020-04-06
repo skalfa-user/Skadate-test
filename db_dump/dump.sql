@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Мар 26 2020 г., 08:49
+-- Время создания: Апр 06 2020 г., 11:43
 -- Версия сервера: 5.7.26
 -- Версия PHP: 7.3.9
 
@@ -976,7 +976,7 @@ INSERT INTO `ow_base_config` (`id`, `key`, `name`, `value`, `description`) VALUE
 (822, 'skadate', 'brand_removal', '0', NULL),
 (823, 'skadate', 'license_key', 'SK750gther123', NULL),
 (824, 'skadate', 'license_key_valid', '1', NULL),
-(825, 'base', 'admin_cookie', '1dURiHigaR4hO72huPYdAKYW3TAqySAp', NULL),
+(825, 'base', 'admin_cookie', 'GOM2NOrONEHyn4JEwIPuTyS1ruLOb3hu', NULL),
 (826, 'base', 'disable_mobile_context', '0', NULL),
 (827, 'base', 'log_file_max_size_mb', '20', NULL),
 (828, 'base', 'attch_file_max_size_mb', '2', NULL),
@@ -1019,16 +1019,16 @@ INSERT INTO `ow_base_config` (`id`, `key`, `name`, `value`, `description`) VALUE
 (876, 'fbconnect', 'app_id', '', 'Facebook Application ID'),
 (883, 'googlelocation', 'map_provider', 'google', 'Selected map provider'),
 (884, 'googlelocation', 'bing_api_key', '', 'bing maps api key'),
-(885, 'base', 'seo_sitemap_build_finished', '1', NULL),
+(885, 'base', 'seo_sitemap_build_finished', '0', NULL),
 (886, 'base', 'seo_sitemap_max_urls_in_file', '4000', NULL),
 (887, 'base', 'seo_sitemap_entitites_max_count', '200000', NULL),
 (888, 'base', 'seo_sitemap_entitites_limit', '500', NULL),
 (889, 'base', 'seo_sitemap_build_in_progress', '0', NULL),
 (890, 'base', 'seo_sitemap_in_progress', '0', NULL),
-(891, 'base', 'seo_sitemap_in_progress_time', '1584681852', NULL),
+(891, 'base', 'seo_sitemap_in_progress_time', '1586154525', NULL),
 (892, 'base', 'seo_sitemap_last_build', '2', NULL),
 (893, 'base', 'seo_sitemap_last_start', '1584681852', NULL),
-(894, 'base', 'seo_sitemap_entities', '{\"base_pages\":{\"lang_prefix\":\"admin\",\"label\":\"seo_sitemap_base_pages\",\"description\":null,\"items\":[{\"name\":\"base_pages\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":1,\"changefreq\":\"weekly\"},\"users\":{\"lang_prefix\":\"admin\",\"label\":\"seo_sitemap_users\",\"description\":\"seo_sitemap_users_desc\",\"items\":[{\"name\":\"user_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"users\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"},\"photos\":{\"lang_prefix\":\"photo\",\"label\":\"photo_sitemap\",\"description\":null,\"items\":[{\"name\":\"photo_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photos\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photos_latest\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photos_toprated\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photos_most_discussed\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_albums\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_tags\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_user_albums\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_users\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"},\"groups\":{\"lang_prefix\":\"groups\",\"label\":\"groups_sitemap\",\"description\":\"groups_sitemap_desc\",\"items\":[{\"name\":\"groups_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups_user_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups_authors\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"}}', NULL),
+(894, 'base', 'seo_sitemap_entities', '{\"base_pages\":{\"lang_prefix\":\"admin\",\"label\":\"seo_sitemap_base_pages\",\"description\":null,\"items\":[{\"name\":\"base_pages\",\"data_fetched\":true,\"urls_count\":7}],\"enabled\":true,\"priority\":1,\"changefreq\":\"weekly\"},\"users\":{\"lang_prefix\":\"admin\",\"label\":\"seo_sitemap_users\",\"description\":\"seo_sitemap_users_desc\",\"items\":[{\"name\":\"user_list\",\"data_fetched\":true,\"urls_count\":5},{\"name\":\"users\",\"data_fetched\":true,\"urls_count\":1}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"},\"photos\":{\"lang_prefix\":\"photo\",\"label\":\"photo_sitemap\",\"description\":null,\"items\":[{\"name\":\"photo_list\",\"data_fetched\":true,\"urls_count\":4},{\"name\":\"photos\",\"data_fetched\":true,\"urls_count\":0},{\"name\":\"photos_latest\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photos_toprated\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photos_most_discussed\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_albums\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_tags\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_user_albums\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_users\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"},\"groups\":{\"lang_prefix\":\"groups\",\"label\":\"groups_sitemap\",\"description\":\"groups_sitemap_desc\",\"items\":[{\"name\":\"groups_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups_user_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups_authors\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"}}', NULL),
 (895, 'base', 'seo_sitemap_schedule_update', 'weekly', NULL),
 (896, 'base', 'seo_sitemap_index', '0', NULL),
 (897, 'base', 'seo_meta_info', '{\"disabledEntities\":[]}', NULL),
@@ -1101,62 +1101,62 @@ CREATE TABLE `ow_base_cron_job` (
 --
 
 INSERT INTO `ow_base_cron_job` (`id`, `methodName`, `runStamp`) VALUES
-(2558, 'BASE_Cron::run', 1585049568),
-(2559, 'BASE_Cron::dbCacheProcess', 1585049568),
-(2560, 'BASE_Cron::mailQueueProcess', 1585049568),
-(2561, 'BASE_Cron::deleteExpiredOnlineUserProcess', 1585049568),
-(2252, 'BASE_Cron::checkPluginUpdates', 1585045270),
-(2562, 'BASE_Cron::deleteExpiredPasswordResetCodes', 1585049568),
-(2563, 'BASE_Cron::resetCronFlag', 1585049568),
-(2255, 'BASE_Cron::rmTempAttachments', 1585045272),
-(2256, 'BASE_Cron::rmTempAvatars', 1585045272),
-(2257, 'BASE_Cron::deleteExpiredCache', 1585045272),
-(2258, 'BASE_Cron::dropLogFile', 1585045272),
-(2259, 'BASE_Cron::clearMySqlSearchIndex', 1585045272),
-(2564, 'BASE_Cron::expireSearchResultList', 1585049568),
-(2565, 'BASE_Cron::generateSitemap', 1585049568),
-(2566, 'BASE_Cron::checkRealCron', 1585049568),
-(2567, 'SKADATE_Cron::run', 1585049568),
-(2264, 'SKADATE_Cron::validateKey', 1585045273),
-(2568, 'HOTLIST_Cron::run', 1585049568),
-(2569, 'HOTLIST_Cron::clearExpiredUsers', 1585049568),
-(2570, 'OCSGUESTS_Cron::run', 1585049568),
-(2571, 'OCSGUESTS_Cron::guestsCheckProcess', 1585049568),
-(2572, 'MEMBERSHIP_Cron::run', 1585049568),
-(2573, 'MEMBERSHIP_Cron::membershipExpireProcess', 1585049568),
-(2574, 'PHOTO_Cron::run', 1585049568),
-(2575, 'PHOTO_Cron::albumsDeleteProcess', 1585049568),
-(2576, 'PHOTO_Cron::contentIndexing', 1585049568),
-(2577, 'PHOTO_Cron::cleareCache', 1585049568),
-(2284, 'PHOTO_Cron::deleteLimitedPhotos', 1585045579),
-(2578, 'PHOTO_Cron::updatePhotoTags', 1585049568),
-(2579, 'MAILBOX_Cron::run', 1585049568),
-(2580, 'MAILBOX_Cron::convertMailboxToChat', 1585049568),
-(2581, 'MAILBOX_Cron::resetAllUsersLastData', 1585049568),
-(2289, 'MAILBOX_Cron::deleteAttachmentFiles', 1585045579),
-(2582, 'MATCHMAKING_Cron::run', 1585049568),
-(2583, 'MATCHMAKING_Cron::sendNewMatches', 1585049568),
-(2584, 'NOTIFICATIONS_Cron::run', 1585049568),
-(2293, 'NOTIFICATIONS_Cron::expireUnsubscribe', 1585045579),
-(2294, 'NOTIFICATIONS_Cron::deleteExpired', 1585045579),
-(2585, 'NOTIFICATIONS_Cron::fillSendQueue', 1585049568),
+(2718, 'BASE_Cron::run', 1586154523),
+(2719, 'BASE_Cron::dbCacheProcess', 1586154523),
+(2720, 'BASE_Cron::mailQueueProcess', 1586154523),
+(2721, 'BASE_Cron::deleteExpiredOnlineUserProcess', 1586154523),
+(2722, 'BASE_Cron::checkPluginUpdates', 1586154523),
+(2723, 'BASE_Cron::deleteExpiredPasswordResetCodes', 1586154525),
+(2724, 'BASE_Cron::resetCronFlag', 1586154525),
+(2725, 'BASE_Cron::rmTempAttachments', 1586154525),
+(2726, 'BASE_Cron::rmTempAvatars', 1586154525),
+(2727, 'BASE_Cron::deleteExpiredCache', 1586154525),
+(2728, 'BASE_Cron::dropLogFile', 1586154525),
+(2729, 'BASE_Cron::clearMySqlSearchIndex', 1586154525),
+(2730, 'BASE_Cron::expireSearchResultList', 1586154525),
+(2731, 'BASE_Cron::generateSitemap', 1586154525),
+(2732, 'BASE_Cron::checkRealCron', 1586154525),
+(2733, 'SKADATE_Cron::run', 1586154525),
+(2734, 'SKADATE_Cron::validateKey', 1586154525),
+(2692, 'HOTLIST_Cron::run', 1585311828),
+(2693, 'HOTLIST_Cron::clearExpiredUsers', 1585311828),
+(2694, 'OCSGUESTS_Cron::run', 1585311828),
+(2695, 'OCSGUESTS_Cron::guestsCheckProcess', 1585311828),
+(2696, 'MEMBERSHIP_Cron::run', 1585311828),
+(2697, 'MEMBERSHIP_Cron::membershipExpireProcess', 1585311828),
+(2698, 'PHOTO_Cron::run', 1585311828),
+(2699, 'PHOTO_Cron::albumsDeleteProcess', 1585311828),
+(2700, 'PHOTO_Cron::contentIndexing', 1585311828),
+(2701, 'PHOTO_Cron::cleareCache', 1585311828),
+(2621, 'PHOTO_Cron::deleteLimitedPhotos', 1585304867),
+(2702, 'PHOTO_Cron::updatePhotoTags', 1585311828),
+(2703, 'MAILBOX_Cron::run', 1585311828),
+(2704, 'MAILBOX_Cron::convertMailboxToChat', 1585311828),
+(2705, 'MAILBOX_Cron::resetAllUsersLastData', 1585311828),
+(2626, 'MAILBOX_Cron::deleteAttachmentFiles', 1585304867),
+(2706, 'MATCHMAKING_Cron::run', 1585311828),
+(2707, 'MATCHMAKING_Cron::sendNewMatches', 1585311828),
+(2708, 'NOTIFICATIONS_Cron::run', 1585311828),
+(2630, 'NOTIFICATIONS_Cron::expireUnsubscribe', 1585304867),
+(2631, 'NOTIFICATIONS_Cron::deleteExpired', 1585304867),
+(2709, 'NOTIFICATIONS_Cron::fillSendQueue', 1585311828),
 (2140, 'VIRTUALGIFTS_Cron::run', 1584686674),
 (2141, 'VIRTUALGIFTS_Cron::templatesDeleteProcess', 1584686674),
-(2586, 'BOOKMARKS_Cron::run', 1585049568),
-(2587, 'BOOKMARKS_Cron::sendNotify', 1585049568),
-(2588, 'WINKS_Cron::run', 1585049568),
-(2299, 'WINKS_Cron::deleteExpiredData', 1585045579),
-(2589, 'GROUPS_Cron::run', 1585049568),
-(2590, 'PRIVACY_Cron::run', 1585049568),
+(2710, 'BOOKMARKS_Cron::run', 1585311828),
+(2711, 'BOOKMARKS_Cron::sendNotify', 1585311828),
+(2712, 'WINKS_Cron::run', 1585311828),
+(2636, 'WINKS_Cron::deleteExpiredData', 1585304867),
+(2713, 'GROUPS_Cron::run', 1585311828),
+(2714, 'PRIVACY_Cron::run', 1585311828),
 (1554, 'VIDEOIM_Cron::run', 1544073485),
 (1527, 'VIDEOIM_Cron::deleteExpiredNotifications', 1544073410),
 (1582, 'SLIDESHOW_Cron::run', 1544073528),
 (1583, 'SLIDESHOW_Cron::slideDeleteProcess', 1544073528),
 (1584, 'SLIDESHOW_Cron::slideshowUninstallProcess', 1544073528),
-(2591, 'SKMOBILEAPP_Cron::run', 1585049568),
-(2303, 'SKMOBILEAPP_Cron::cleanDeviceTokens', 1585045579),
-(2592, 'SKMOBILEAPP_Cron::cleanWebPushMessages', 1585049568),
-(2593, 'SKMOBILEAPP_Cron::cleanExpiredUsersSubscriptions', 1585049568);
+(2715, 'SKMOBILEAPP_Cron::run', 1585311828),
+(2640, 'SKMOBILEAPP_Cron::cleanDeviceTokens', 1585304867),
+(2716, 'SKMOBILEAPP_Cron::cleanWebPushMessages', 1585311828),
+(2717, 'SKMOBILEAPP_Cron::cleanExpiredUsersSubscriptions', 1585311828);
 
 -- --------------------------------------------------------
 
@@ -16917,7 +16917,7 @@ CREATE TABLE `ow_base_login_cookie` (
 --
 
 INSERT INTO `ow_base_login_cookie` (`id`, `userId`, `cookie`) VALUES
-(1, 1, '8f9492de53e2eccc8ced7f7333212022');
+(1, 1, '04d1dd0aa24a60d53fea6633abbadd9d');
 
 -- --------------------------------------------------------
 
@@ -17230,7 +17230,7 @@ CREATE TABLE `ow_base_preference_data` (
 --
 
 INSERT INTO `ow_base_preference_data` (`id`, `key`, `userId`, `value`) VALUES
-(1, 'profile_details_update_stamp', 1, '1585049607');
+(1, 'profile_details_update_stamp', 1, '1586154523');
 
 -- --------------------------------------------------------
 
@@ -17383,7 +17383,7 @@ INSERT INTO `ow_base_question_data` (`id`, `questionName`, `userId`, `textValue`
 (2, 'sex', 1, '', 2, NULL),
 (3, 'match_age', 1, '27-89', 0, NULL),
 (4, 'birthdate', 1, '', 0, '1980-01-01 00:00:00'),
-(5, 'realname', 1, 'Tester', 0, NULL),
+(5, 'realname', 1, 'tester', 0, NULL),
 (6, 'aboutme', 1, 'About tester', 0, NULL);
 
 -- --------------------------------------------------------
@@ -17880,6 +17880,29 @@ CREATE TABLE `ow_base_sitemap` (
   `entityType` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `ow_base_sitemap`
+--
+
+INSERT INTO `ow_base_sitemap` (`id`, `url`, `entityType`) VALUES
+(1, 'http://localhost/Skadate-test/', 'base_pages'),
+(2, 'http://localhost/Skadate-test/mobile-version', 'base_pages'),
+(3, 'http://localhost/Skadate-test/join', 'base_pages'),
+(4, 'http://localhost/Skadate-test/sign-in', 'base_pages'),
+(5, 'http://localhost/Skadate-test/forgot-password', 'base_pages'),
+(6, 'http://localhost/Skadate-test/terms-of-use', 'base_pages'),
+(7, 'http://localhost/Skadate-test/privacy', 'base_pages'),
+(8, 'http://localhost/Skadate-test/users', 'users'),
+(9, 'http://localhost/Skadate-test/users/latest', 'users'),
+(10, 'http://localhost/Skadate-test/users/featured', 'users'),
+(11, 'http://localhost/Skadate-test/users/online', 'users'),
+(12, 'http://localhost/Skadate-test/users/search', 'users'),
+(13, 'http://localhost/Skadate-test/user/tester', 'users'),
+(14, 'http://localhost/Skadate-test/photo/viewlist/latest', 'photos'),
+(15, 'http://localhost/Skadate-test/photo/viewlist/toprated', 'photos'),
+(16, 'http://localhost/Skadate-test/photo/viewlist/most_discussed', 'photos'),
+(17, 'http://localhost/Skadate-test/photo/viewlist/tagged', 'photos');
+
 -- --------------------------------------------------------
 
 --
@@ -17922,7 +17945,11 @@ INSERT INTO `ow_base_site_statistic` (`id`, `entityType`, `entityId`, `entityCou
 (21, 'user_login', 1, 1, 1585045271),
 (22, 'user_login', 1, 1, 1585046134),
 (23, 'group', 1, 1, 1585048425),
-(24, 'group', 2, 1, 1585049613);
+(24, 'group', 2, 1, 1585049613),
+(25, 'user_login', 1, 1, 1585304924),
+(26, 'user_login', 1, 1, 1585308310),
+(27, 'user_login', 1, 1, 1585311829),
+(28, 'user_login', 1, 1, 1586154523);
 
 -- --------------------------------------------------------
 
@@ -18848,7 +18875,7 @@ CREATE TABLE `ow_base_user` (
 --
 
 INSERT INTO `ow_base_user` (`id`, `email`, `username`, `password`, `joinStamp`, `activityStamp`, `accountType`, `emailVerify`, `joinIp`) VALUES
-(1, 'tester@tester.com', 'tester', '21e45eeb5e27a2cae8f1f561a3873d48d77800668d6e39d1f4d7a67e8f393af6', 0, 1585051067, '8cc28eaddb382d7c6a94aeea9ec029fb', 1, 0);
+(1, 'test@test.com', 'tester', '21e45eeb5e27a2cae8f1f561a3873d48d77800668d6e39d1f4d7a67e8f393af6', 0, 1586154525, '8cc28eaddb382d7c6a94aeea9ec029fb', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -18915,7 +18942,7 @@ CREATE TABLE `ow_base_user_online` (
 --
 
 INSERT INTO `ow_base_user_online` (`id`, `userId`, `activityStamp`, `context`) VALUES
-(7, 1, 1585051067, 1);
+(11, 1, 1586154525, 1);
 
 -- --------------------------------------------------------
 
@@ -19538,7 +19565,7 @@ CREATE TABLE `ow_mailbox_user_last_data` (
 INSERT INTO `ow_mailbox_user_last_data` (`id`, `userId`, `data`) VALUES
 (3, 0, '{\"userOnlineCount\":0,\"userList\":[],\"conversationsCount\":0,\"convList\":[]}'),
 (4, 0, '{\"userOnlineCount\":0,\"userList\":[],\"conversationsCount\":0,\"convList\":[]}'),
-(26, 1, '{\"userOnlineCount\":0,\"userList\":[],\"conversationsCount\":0,\"convList\":[]}');
+(29, 1, '{\"userOnlineCount\":0,\"userList\":[],\"conversationsCount\":0,\"convList\":[]}');
 
 -- --------------------------------------------------------
 
@@ -19845,6 +19872,13 @@ CREATE TABLE `ow_notifications_send_queue` (
   `userId` int(11) NOT NULL,
   `timeStamp` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ow_notifications_send_queue`
+--
+
+INSERT INTO `ow_notifications_send_queue` (`id`, `userId`, `timeStamp`) VALUES
+(9, 1, 1585311828);
 
 -- --------------------------------------------------------
 
@@ -22109,7 +22143,7 @@ ALTER TABLE `ow_base_config`
 -- AUTO_INCREMENT для таблицы `ow_base_cron_job`
 --
 ALTER TABLE `ow_base_cron_job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2594;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2735;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_db_cache`
@@ -22361,13 +22395,13 @@ ALTER TABLE `ow_base_search_result`
 -- AUTO_INCREMENT для таблицы `ow_base_sitemap`
 --
 ALTER TABLE `ow_base_sitemap`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_site_statistic`
 --
 ALTER TABLE `ow_base_site_statistic`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_tag`
@@ -22445,7 +22479,7 @@ ALTER TABLE `ow_base_user_featured`
 -- AUTO_INCREMENT для таблицы `ow_base_user_online`
 --
 ALTER TABLE `ow_base_user_online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_user_reset_password`
@@ -22505,7 +22539,7 @@ ALTER TABLE `ow_bookmarks_mark`
 -- AUTO_INCREMENT для таблицы `ow_bookmarks_notify_log`
 --
 ALTER TABLE `ow_bookmarks_notify_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_contactus_department`
@@ -22667,7 +22701,7 @@ ALTER TABLE `ow_mailbox_message`
 -- AUTO_INCREMENT для таблицы `ow_mailbox_user_last_data`
 --
 ALTER TABLE `ow_mailbox_user_last_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_matchmaking_question_match`
@@ -22781,7 +22815,7 @@ ALTER TABLE `ow_notifications_schedule`
 -- AUTO_INCREMENT для таблицы `ow_notifications_send_queue`
 --
 ALTER TABLE `ow_notifications_send_queue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_notifications_unsubscribe`
