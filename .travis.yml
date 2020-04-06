@@ -39,7 +39,7 @@ apt:
 addons:
   apt:
     update: true
-    chrome: stable
+    chrome: 81
 
 before_install:
   - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
