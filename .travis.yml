@@ -16,6 +16,7 @@ php:
 
 services:
   - mysql
+  - xvfb
 
 env:
  global:
