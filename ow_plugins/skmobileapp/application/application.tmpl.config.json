@@ -16,6 +16,6 @@
   "pwaIconType": "image/png",
   "appleIcon": "assets/img/apple-touch-icon.png",
   "appleIconSize": "180x180",
-  "firebaseApiKey": "",
-  "firebaseAuthDomain": ""
+  "firebaseApiKey": "14235125",
+  "firebaseAuthDomain": "12351235"
 }
