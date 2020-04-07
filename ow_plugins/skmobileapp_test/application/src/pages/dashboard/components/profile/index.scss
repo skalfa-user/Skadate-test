@@ -1,0 +1,99 @@
+.sk-profile-tab {
+    .sk-user {
+        padding-top: 5.5vh;
+
+        &-avatar {
+            @include flex(flex, row, center, stretch);
+            position: relative;
+              
+            user-avatar {
+                height: 22vh;
+                width: 22vh;
+                border-radius: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .sk-photo-pending {
+                height: 22vh;
+                width: 22vh;
+                border-radius: 100%;
+            }          
+        }
+
+        &-info {
+            @include flex(flex, column, center, center);
+            padding: 3vh 2rem 1vh;
+
+            span {
+                max-width: 80%;
+                @include text-overflow;
+            }
+
+            .sk-name {
+                color: $sk-profile-tab-name;
+                font-size: 2rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .sk-about {
+                font-size: 1.8rem;
+                color: $sk-profile-tab-about;
+            }
+        }
+
+        &-buttons {
+            @include flex(flex, row, center, center);
+            margin: 3rem 0;
+            padding: 0 16px;
+
+            button {
+                height: 4rem;
+                min-width: 14rem;
+                margin: 0 6px;
+                padding: 0 2rem;
+                border-width: 2px;
+                border-color: $sk-profile-button-border;
+                font-size: 1.4rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+
+        &-links {
+            @include flex(flex, column, flex-start, stretch);
+
+            button {
+                height: 4.3rem;
+                margin: 0;
+                color: $sk-profile-link;
+                font-weight: bold;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+
+                &.sk-user-link-pwa-guide {
+                    background-color: $sk-user-link-pwa-bg;
+                    color: $sk-user-link-pwa-color;
+                    border-top: none;
+                }
+            }
+        }
+    }
+
+    .sk-guest-count {
+        @include flex(inline-flex, row, center, center);
+        min-width: 22px;
+        width: 2.2rem;
+        height: 2.2rem;
+        @include margin(null, null, null, 8px);
+        font-weight: normal;
+        font-size: 1.2rem;
+        color: color($colors, light);
+        background-color: $sk-guest-count;
+        border-radius: 50%;
+    }
+}
