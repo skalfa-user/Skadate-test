@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Апр 06 2020 г., 11:43
+-- Время создания: Апр 07 2020 г., 04:52
 -- Версия сервера: 5.7.26
 -- Версия PHP: 7.3.9
 
@@ -376,8 +376,7 @@ CREATE TABLE `ow_base_billing_gateway` (
 INSERT INTO `ow_base_billing_gateway` (`id`, `gatewayKey`, `adapterClassName`, `active`, `mobile`, `recurring`, `dynamic`, `hidden`, `currencies`) VALUES
 (4, 'billingpaypal', 'BILLINGPAYPAL_CLASS_PaypalAdapter', 1, 1, 1, NULL, 0, 'AUD,BRL,CAD,CZK,DKK,EUR,HKD,HUF,ILS,JPY,MYR,MXN,NOK,NZD,PHP,PLN,GBP,SGD,SEK,CHF,TWD,THB,USD'),
 (3, 'billingccbill', 'BILLINGCCBILL_CLASS_CcbillAdapter', 0, 0, 1, NULL, 0, 'AUD,CAD,EUR,GBP,JPY,USD'),
-(5, 'billingstripe', 'BILLINGSTRIPE_CLASS_StripeAdapter', 0, 1, 1, 0, 0, 'USD,EUR,GBP,CAD,AUD,CHF,DKK,NOK,SEK'),
-(6, 'skmobileapp', 'SKMOBILEAPP_CLASS_InAppPurchaseAdapter', 1, 1, 1, 0, 1, 'AUD,CAD,EUR,GBP,JPY,USD');
+(5, 'billingstripe', 'BILLINGSTRIPE_CLASS_StripeAdapter', 0, 1, 1, 0, 0, 'USD,EUR,GBP,CAD,AUD,CHF,DKK,NOK,SEK');
 
 -- --------------------------------------------------------
 
@@ -599,8 +598,7 @@ INSERT INTO `ow_base_component` (`id`, `className`, `clonable`) VALUES
 (857, 'GROUPS_CMP_UserGroupsWidget', 0),
 (858, 'GROUPS_CMP_GroupsWidget', 0),
 (870, 'BASE_CMP_UserListWidget', 0),
-(897, 'SKMOBILEAPP_CMP_MobileExperience', 0),
-(898, 'SKMOBILEAPP_MCMP_MobileExperience', 0);
+(909, 'SKADATE_CMP_MobileExperience', 0);
 
 -- --------------------------------------------------------
 
@@ -721,10 +719,8 @@ INSERT INTO `ow_base_component_place` (`id`, `componentId`, `placeId`, `clone`, 
 (100879, 857, 3, 0, 'profile-GROUPS_CMP_UserGroupsWidget'),
 (100880, 858, 2, 0, 'index-GROUPS_CMP_GroupsWidget'),
 (100892, 870, 2, 0, 'index-BASE_CMP_UserListWidget'),
-(100919, 897, 2, 0, 'index-SKMOBILEAPP_CMP_MobileExperience'),
-(100920, 897, 1, 0, 'dashboard-SKMOBILEAPP_CMP_MobileExperience'),
-(100921, 898, 5, 0, 'mobile.index-SKMOBILEAPP_MCMP_MobileExperience'),
-(100922, 898, 6, 0, 'mobile.dashboard-SKMOBILEAPP_MCMP_MobileExperience');
+(100942, 909, 2, 0, 'index-SKADATE_CMP_MobileExperience'),
+(100943, 909, 1, 0, 'dashboard-SKADATE_CMP_MobileExperience');
 
 -- --------------------------------------------------------
 
@@ -745,8 +741,6 @@ CREATE TABLE `ow_base_component_place_cache` (
 
 INSERT INTO `ow_base_component_place_cache` (`id`, `placeId`, `state`, `entityId`) VALUES
 (7, 7, '{\"defaultComponents\":{\"admin.dashboard-BASE_CMP_CustomHtmlWidget\":{\"id\":\"100832\",\"className\":\"BASE_CMP_CustomHtmlWidget\",\"clonable\":\"1\",\"componentId\":\"62\",\"clone\":\"0\",\"uniqName\":\"admin.dashboard-BASE_CMP_CustomHtmlWidget\"},\"admin.dashboard-BASE_CMP_RssWidget\":{\"id\":\"100833\",\"className\":\"BASE_CMP_RssWidget\",\"clonable\":\"1\",\"componentId\":\"69\",\"clone\":\"0\",\"uniqName\":\"admin.dashboard-BASE_CMP_RssWidget\"},\"admin.dashboard-ADMIN_CMP_FinanceStatisticWidget\":{\"id\":\"100834\",\"className\":\"ADMIN_CMP_FinanceStatisticWidget\",\"clonable\":\"0\",\"componentId\":\"814\",\"clone\":\"0\",\"uniqName\":\"admin.dashboard-ADMIN_CMP_FinanceStatisticWidget\"},\"admin.dashboard-ADMIN_CMP_UserStatisticWidget\":{\"id\":\"100835\",\"className\":\"ADMIN_CMP_UserStatisticWidget\",\"clonable\":\"0\",\"componentId\":\"815\",\"clone\":\"0\",\"uniqName\":\"admin.dashboard-ADMIN_CMP_UserStatisticWidget\"},\"admin.dashboard-ADMIN_CMP_ContentStatisticWidget\":{\"id\":\"100836\",\"className\":\"ADMIN_CMP_ContentStatisticWidget\",\"clonable\":\"0\",\"componentId\":\"816\",\"clone\":\"0\",\"uniqName\":\"admin.dashboard-ADMIN_CMP_ContentStatisticWidget\"}},\"defaultPositions\":{\"admin.dashboard-ADMIN_CMP_FinanceStatisticWidget\":{\"componentPlaceUniqName\":\"admin.dashboard-ADMIN_CMP_FinanceStatisticWidget\",\"section\":\"top\",\"order\":\"0\",\"id\":\"11661\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":28837293,\"section\":517545930,\"order\":4108050209}},\"admin.dashboard-ADMIN_CMP_UserStatisticWidget\":{\"componentPlaceUniqName\":\"admin.dashboard-ADMIN_CMP_UserStatisticWidget\",\"section\":\"top\",\"order\":\"1\",\"id\":\"11662\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":1571435011,\"section\":517545930,\"order\":2212294583}},\"admin.dashboard-ADMIN_CMP_ContentStatisticWidget\":{\"componentPlaceUniqName\":\"admin.dashboard-ADMIN_CMP_ContentStatisticWidget\",\"section\":\"top\",\"order\":\"2\",\"id\":\"11663\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":920796776,\"section\":517545930,\"order\":450215437}}},\"defaultSettings\":{\"admin-4b543d8cdc488\":{\"content\":\"Welcome to our new site! Feel free to participate in our community!\",\"nl_to_br\":\"0\",\"title\":\"Welcome\",\"show_title\":\"0\",\"icon\":\"ow_ic_warning\",\"wrap_in_box\":\"1\",\"freeze\":\"0\"},\"dashboard-OCSGUESTS_CMP_MyGuestsWidget\":{\"wrap_in_box\":\"0\",\"show_title\":\"1\",\"icon\":\"ow_ic_lens\",\"freeze\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"12\",\"34\"],\"count\":\"8\"},\"index-BASE_CMP_JoinNowWidget\":{\"freeze\":\"0\"},\"index-BASE_CMP_AddNewContent\":{\"freeze\":\"0\"},\"profile-PHOTO_CMP_UserPhotoAlbumsWidget\":{\"freeze\":\"0\",\"albumsCount\":\"4\",\"showTitles\":\"0\",\"show_title\":\"1\",\"icon\":\"ow_ic_picture\",\"wrap_in_box\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"1\",\"12\",\"34\"]},\"profile-BASE_CMP_AboutMeWidget\":{\"freeze\":\"0\"},\"profile-BASE_CMP_UserViewWidget\":{\"show_title\":\"0\",\"icon\":\"ow_ic_add\",\"wrap_in_box\":\"0\",\"freeze\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"1\",\"12\",\"34\",\"28\",\"30\"]},\"dashboard-BASE_CMP_QuickLinksWidget\":{\"freeze\":\"0\"},\"dashboard-MEMBERSHIP_CMP_MyMembershipWidget\":{\"freeze\":\"1\"},\"profile-MEMBERSHIP_CMP_UserMembershipWidget\":{\"freeze\":\"1\"}},\"defaultScheme\":[]}', 0),
-(10, 1, '{\"defaultComponents\":{\"dashboard-BASE_CMP_RssWidget\":{\"id\":\"327\",\"className\":\"BASE_CMP_RssWidget\",\"clonable\":\"1\",\"componentId\":\"69\",\"clone\":\"0\",\"uniqName\":\"dashboard-BASE_CMP_RssWidget\"},\"dashboard-BASE_CMP_CustomHtmlWidget\":{\"id\":\"318\",\"className\":\"BASE_CMP_CustomHtmlWidget\",\"clonable\":\"1\",\"componentId\":\"62\",\"clone\":\"0\",\"uniqName\":\"dashboard-BASE_CMP_CustomHtmlWidget\"},\"dashboard-BASE_CMP_WelcomeWidget\":{\"id\":\"100829\",\"className\":\"BASE_CMP_WelcomeWidget\",\"clonable\":\"0\",\"componentId\":\"811\",\"clone\":\"0\",\"uniqName\":\"dashboard-BASE_CMP_WelcomeWidget\"},\"dashboard-BASE_CMP_QuickLinksWidget\":{\"id\":\"100775\",\"className\":\"BASE_CMP_QuickLinksWidget\",\"clonable\":\"0\",\"componentId\":\"761\",\"clone\":\"0\",\"uniqName\":\"dashboard-BASE_CMP_QuickLinksWidget\"},\"dashboard-MATCHMAKING_CMP_MatchesWidget\":{\"id\":\"100851\",\"className\":\"MATCHMAKING_CMP_MatchesWidget\",\"clonable\":\"0\",\"componentId\":\"831\",\"clone\":\"0\",\"uniqName\":\"dashboard-MATCHMAKING_CMP_MatchesWidget\"},\"dashboard-OCSGUESTS_CMP_MyGuestsWidget\":{\"id\":\"100781\",\"className\":\"OCSGUESTS_CMP_MyGuestsWidget\",\"clonable\":\"0\",\"componentId\":\"767\",\"clone\":\"0\",\"uniqName\":\"dashboard-OCSGUESTS_CMP_MyGuestsWidget\"},\"dashboard-BASE_CMP_ModerationToolsWidget\":{\"id\":\"100828\",\"className\":\"BASE_CMP_ModerationToolsWidget\",\"clonable\":\"0\",\"componentId\":\"810\",\"clone\":\"0\",\"uniqName\":\"dashboard-BASE_CMP_ModerationToolsWidget\"},\"dashboard-MEMBERSHIP_CMP_MyMembershipWidget\":{\"id\":\"100852\",\"className\":\"MEMBERSHIP_CMP_MyMembershipWidget\",\"clonable\":\"0\",\"componentId\":\"832\",\"clone\":\"0\",\"uniqName\":\"dashboard-MEMBERSHIP_CMP_MyMembershipWidget\"},\"dashboard-HOTLIST_CMP_IndexWidget\":{\"id\":\"100848\",\"className\":\"HOTLIST_CMP_IndexWidget\",\"clonable\":\"0\",\"componentId\":\"828\",\"clone\":\"0\",\"uniqName\":\"dashboard-HOTLIST_CMP_IndexWidget\"},\"dashboard-BOOKMARKS_CMP_BookmarksWidget\":{\"id\":\"100845\",\"className\":\"BOOKMARKS_CMP_BookmarksWidget\",\"clonable\":\"0\",\"componentId\":\"825\",\"clone\":\"0\",\"uniqName\":\"dashboard-BOOKMARKS_CMP_BookmarksWidget\"},\"dashboard-USEARCH_CMP_QuickSearchWidget\":{\"id\":\"100857\",\"className\":\"USEARCH_CMP_QuickSearchWidget\",\"clonable\":\"0\",\"componentId\":\"837\",\"clone\":\"0\",\"uniqName\":\"dashboard-USEARCH_CMP_QuickSearchWidget\"},\"dashboard-SKMOBILEAPP_CMP_MobileExperience\":{\"id\":\"100920\",\"className\":\"SKMOBILEAPP_CMP_MobileExperience\",\"clonable\":\"0\",\"componentId\":\"897\",\"clone\":\"0\",\"uniqName\":\"dashboard-SKMOBILEAPP_CMP_MobileExperience\"}},\"defaultPositions\":{\"dashboard-BASE_CMP_WelcomeWidget\":{\"componentPlaceUniqName\":\"dashboard-BASE_CMP_WelcomeWidget\",\"section\":\"right\",\"order\":\"3\",\"id\":\"11749\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":1205924997,\"section\":3033167124,\"order\":1842515611}},\"dashboard-BASE_CMP_QuickLinksWidget\":{\"componentPlaceUniqName\":\"dashboard-BASE_CMP_QuickLinksWidget\",\"section\":\"left\",\"order\":\"1\",\"id\":\"11728\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":4097461306,\"section\":2053629800,\"order\":2212294583}},\"dashboard-MATCHMAKING_CMP_MatchesWidget\":{\"componentPlaceUniqName\":\"dashboard-MATCHMAKING_CMP_MatchesWidget\",\"section\":\"right\",\"order\":\"1\",\"id\":\"11747\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":2453498411,\"section\":3033167124,\"order\":2212294583}},\"dashboard-OCSGUESTS_CMP_MyGuestsWidget\":{\"componentPlaceUniqName\":\"dashboard-OCSGUESTS_CMP_MyGuestsWidget\",\"section\":\"right\",\"order\":\"4\",\"id\":\"11750\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":393205073,\"section\":3033167124,\"order\":4088798008}},\"dashboard-BASE_CMP_ModerationToolsWidget\":{\"componentPlaceUniqName\":\"dashboard-BASE_CMP_ModerationToolsWidget\",\"section\":\"right\",\"order\":\"2\",\"id\":\"11748\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":1558372840,\"section\":3033167124,\"order\":450215437}},\"dashboard-MEMBERSHIP_CMP_MyMembershipWidget\":{\"componentPlaceUniqName\":\"dashboard-MEMBERSHIP_CMP_MyMembershipWidget\",\"section\":\"left\",\"order\":\"0\",\"id\":\"11727\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":3249133577,\"section\":2053629800,\"order\":4108050209}},\"dashboard-HOTLIST_CMP_IndexWidget\":{\"componentPlaceUniqName\":\"dashboard-HOTLIST_CMP_IndexWidget\",\"section\":\"right\",\"order\":\"0\",\"id\":\"11746\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":2706739104,\"section\":3033167124,\"order\":4108050209}},\"dashboard-BOOKMARKS_CMP_BookmarksWidget\":{\"componentPlaceUniqName\":\"dashboard-BOOKMARKS_CMP_BookmarksWidget\",\"section\":\"right\",\"order\":\"5\",\"id\":\"11751\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":1163403189,\"section\":3033167124,\"order\":2226203566}},\"dashboard-USEARCH_CMP_QuickSearchWidget\":{\"componentPlaceUniqName\":\"dashboard-USEARCH_CMP_QuickSearchWidget\",\"section\":\"left\",\"order\":\"2\",\"id\":\"11729\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":945210796,\"section\":2053629800,\"order\":450215437}},\"dashboard-SKMOBILEAPP_CMP_MobileExperience\":{\"componentPlaceUniqName\":\"dashboard-SKMOBILEAPP_CMP_MobileExperience\",\"section\":\"right\",\"order\":\"6\",\"id\":\"11752\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":3862810292,\"section\":3033167124,\"order\":498629140}}},\"defaultSettings\":{\"admin-4b543d8cdc488\":{\"content\":\"Welcome to our new site! Feel free to participate in our community!\",\"nl_to_br\":\"0\",\"title\":\"Welcome\",\"show_title\":\"0\",\"icon\":\"ow_ic_warning\",\"wrap_in_box\":\"1\",\"freeze\":\"0\"},\"dashboard-OCSGUESTS_CMP_MyGuestsWidget\":{\"wrap_in_box\":\"0\",\"show_title\":\"1\",\"icon\":\"ow_ic_lens\",\"freeze\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"12\",\"34\"],\"count\":\"8\"},\"index-BASE_CMP_JoinNowWidget\":{\"freeze\":\"0\"},\"index-BASE_CMP_AddNewContent\":{\"freeze\":\"0\"},\"profile-PHOTO_CMP_UserPhotoAlbumsWidget\":{\"freeze\":\"0\",\"albumsCount\":\"4\",\"showTitles\":\"0\",\"show_title\":\"1\",\"icon\":\"ow_ic_picture\",\"wrap_in_box\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"1\",\"12\",\"34\"]},\"profile-BASE_CMP_AboutMeWidget\":{\"freeze\":\"0\"},\"profile-BASE_CMP_UserViewWidget\":{\"show_title\":\"0\",\"icon\":\"ow_ic_add\",\"wrap_in_box\":\"0\",\"freeze\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"1\",\"12\",\"34\",\"28\",\"30\"]},\"dashboard-BASE_CMP_QuickLinksWidget\":{\"freeze\":\"0\"},\"dashboard-MEMBERSHIP_CMP_MyMembershipWidget\":{\"freeze\":\"1\"},\"profile-MEMBERSHIP_CMP_UserMembershipWidget\":{\"freeze\":\"1\"}},\"defaultScheme\":{\"rightCssClass\":\"ow_wide\",\"leftCssClass\":\"ow_narrow\",\"cssClass\":\"ow_scheme_nw\",\"id\":\"2\",\"\\u0000*\\u0000_fieldsHash\":{\"rightCssClass\":3243365871,\"leftCssClass\":976235525,\"cssClass\":4137292918}}}', 0),
-(11, 2, '{\"defaultComponents\":{\"index-BASE_CMP_RssWidget\":{\"id\":\"317\",\"className\":\"BASE_CMP_RssWidget\",\"clonable\":\"1\",\"componentId\":\"69\",\"clone\":\"0\",\"uniqName\":\"index-BASE_CMP_RssWidget\"},\"index-BASE_CMP_JoinNowWidget\":{\"id\":\"324\",\"className\":\"BASE_CMP_JoinNowWidget\",\"clonable\":\"0\",\"componentId\":\"67\",\"clone\":\"0\",\"uniqName\":\"index-BASE_CMP_JoinNowWidget\"},\"index-BASE_CMP_IndexWallWidget\":{\"id\":\"321\",\"className\":\"BASE_CMP_IndexWallWidget\",\"clonable\":\"0\",\"componentId\":\"64\",\"clone\":\"0\",\"uniqName\":\"index-BASE_CMP_IndexWallWidget\"},\"index-PHOTO_CMP_PhotoListWidget\":{\"id\":\"100891\",\"className\":\"PHOTO_CMP_PhotoListWidget\",\"clonable\":\"0\",\"componentId\":\"869\",\"clone\":\"0\",\"uniqName\":\"index-PHOTO_CMP_PhotoListWidget\"},\"index-BASE_CMP_CustomHtmlWidget\":{\"id\":\"326\",\"className\":\"BASE_CMP_CustomHtmlWidget\",\"clonable\":\"1\",\"componentId\":\"62\",\"clone\":\"0\",\"uniqName\":\"index-BASE_CMP_CustomHtmlWidget\"},\"index-BASE_CMP_AddNewContent\":{\"id\":\"316\",\"className\":\"BASE_CMP_AddNewContent\",\"clonable\":\"0\",\"componentId\":\"61\",\"clone\":\"0\",\"uniqName\":\"index-BASE_CMP_AddNewContent\"},\"admin-4b543d8cdc488\":{\"id\":\"100001\",\"className\":\"BASE_CMP_CustomHtmlWidget\",\"clonable\":\"1\",\"componentId\":\"62\",\"clone\":\"1\",\"uniqName\":\"admin-4b543d8cdc488\"},\"index-BASE_CMP_MyAvatarWidget\":{\"id\":\"100152\",\"className\":\"BASE_CMP_MyAvatarWidget\",\"clonable\":\"0\",\"componentId\":\"207\",\"clone\":\"0\",\"uniqName\":\"index-BASE_CMP_MyAvatarWidget\"},\"index-MEMBERSHIP_CMP_PromoWidget\":{\"id\":\"100854\",\"className\":\"MEMBERSHIP_CMP_PromoWidget\",\"clonable\":\"0\",\"componentId\":\"834\",\"clone\":\"0\",\"uniqName\":\"index-MEMBERSHIP_CMP_PromoWidget\"},\"index-GROUPS_CMP_GroupsWidget\":{\"id\":\"100880\",\"className\":\"GROUPS_CMP_GroupsWidget\",\"clonable\":\"0\",\"componentId\":\"858\",\"clone\":\"0\",\"uniqName\":\"index-GROUPS_CMP_GroupsWidget\"},\"index-BASE_CMP_UserListWidget\":{\"id\":\"100892\",\"className\":\"BASE_CMP_UserListWidget\",\"clonable\":\"0\",\"componentId\":\"870\",\"clone\":\"0\",\"uniqName\":\"index-BASE_CMP_UserListWidget\"},\"index-SKMOBILEAPP_CMP_MobileExperience\":{\"id\":\"100919\",\"className\":\"SKMOBILEAPP_CMP_MobileExperience\",\"clonable\":\"0\",\"componentId\":\"897\",\"clone\":\"0\",\"uniqName\":\"index-SKMOBILEAPP_CMP_MobileExperience\"}},\"defaultPositions\":{\"index-BASE_CMP_MyAvatarWidget\":{\"componentPlaceUniqName\":\"index-BASE_CMP_MyAvatarWidget\",\"section\":\"sidebar\",\"order\":\"0\",\"id\":\"11665\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":962757101,\"section\":2263074910,\"order\":4108050209}},\"index-MEMBERSHIP_CMP_PromoWidget\":{\"componentPlaceUniqName\":\"index-MEMBERSHIP_CMP_PromoWidget\",\"section\":\"sidebar\",\"order\":\"1\",\"id\":\"11666\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":1023344508,\"section\":2263074910,\"order\":2212294583}},\"index-GROUPS_CMP_GroupsWidget\":{\"componentPlaceUniqName\":\"index-GROUPS_CMP_GroupsWidget\",\"section\":\"left\",\"order\":\"2\",\"id\":\"11644\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":2706566909,\"section\":2053629800,\"order\":450215437}},\"index-SKMOBILEAPP_CMP_MobileExperience\":{\"componentPlaceUniqName\":\"index-SKMOBILEAPP_CMP_MobileExperience\",\"section\":\"right\",\"order\":\"0\",\"id\":\"11745\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":518753163,\"section\":3033167124,\"order\":4108050209}}},\"defaultSettings\":{\"admin-4b543d8cdc488\":{\"content\":\"Welcome to our new site! Feel free to participate in our community!\",\"nl_to_br\":\"0\",\"title\":\"Welcome\",\"show_title\":\"0\",\"icon\":\"ow_ic_warning\",\"wrap_in_box\":\"1\",\"freeze\":\"0\"},\"dashboard-OCSGUESTS_CMP_MyGuestsWidget\":{\"wrap_in_box\":\"0\",\"show_title\":\"1\",\"icon\":\"ow_ic_lens\",\"freeze\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"12\",\"34\"],\"count\":\"8\"},\"index-BASE_CMP_JoinNowWidget\":{\"freeze\":\"0\"},\"index-BASE_CMP_AddNewContent\":{\"freeze\":\"0\"},\"profile-PHOTO_CMP_UserPhotoAlbumsWidget\":{\"freeze\":\"0\",\"albumsCount\":\"4\",\"showTitles\":\"0\",\"show_title\":\"1\",\"icon\":\"ow_ic_picture\",\"wrap_in_box\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"1\",\"12\",\"34\"]},\"profile-BASE_CMP_AboutMeWidget\":{\"freeze\":\"0\"},\"profile-BASE_CMP_UserViewWidget\":{\"show_title\":\"0\",\"icon\":\"ow_ic_add\",\"wrap_in_box\":\"0\",\"freeze\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"1\",\"12\",\"34\",\"28\",\"30\"]},\"dashboard-BASE_CMP_QuickLinksWidget\":{\"freeze\":\"0\"},\"dashboard-MEMBERSHIP_CMP_MyMembershipWidget\":{\"freeze\":\"1\"},\"profile-MEMBERSHIP_CMP_UserMembershipWidget\":{\"freeze\":\"1\"}},\"defaultScheme\":{\"rightCssClass\":\"ow_wide\",\"leftCssClass\":\"ow_narrow\",\"cssClass\":\"ow_scheme_nw\",\"id\":\"2\",\"\\u0000*\\u0000_fieldsHash\":{\"rightCssClass\":3243365871,\"leftCssClass\":976235525,\"cssClass\":4137292918}}}', 0),
 (12, 4, '{\"defaultComponents\":{\"group-GOOGLELOCATION_CMP_GroupsWidget\":{\"id\":\"100923\",\"className\":\"GOOGLELOCATION_CMP_GroupsWidget\",\"clonable\":\"0\",\"componentId\":\"899\",\"clone\":\"0\",\"uniqName\":\"group-GOOGLELOCATION_CMP_GroupsWidget\"},\"group-GROUPS_CMP_JoinButtonWidget\":{\"id\":\"100871\",\"className\":\"GROUPS_CMP_JoinButtonWidget\",\"clonable\":\"0\",\"componentId\":\"851\",\"clone\":\"0\",\"uniqName\":\"group-GROUPS_CMP_JoinButtonWidget\"},\"group-GROUPS_CMP_BriefInfoWidget\":{\"id\":\"100872\",\"className\":\"GROUPS_CMP_BriefInfoWidget\",\"clonable\":\"0\",\"componentId\":\"852\",\"clone\":\"0\",\"uniqName\":\"group-GROUPS_CMP_BriefInfoWidget\"},\"group-GROUPS_CMP_UserListWidget\":{\"id\":\"100873\",\"className\":\"GROUPS_CMP_UserListWidget\",\"clonable\":\"0\",\"componentId\":\"853\",\"clone\":\"0\",\"uniqName\":\"group-GROUPS_CMP_UserListWidget\"},\"group-GROUPS_CMP_LeaveButtonWidget\":{\"id\":\"100874\",\"className\":\"GROUPS_CMP_LeaveButtonWidget\",\"clonable\":\"0\",\"componentId\":\"854\",\"clone\":\"0\",\"uniqName\":\"group-GROUPS_CMP_LeaveButtonWidget\"},\"group-GROUPS_CMP_WallWidget\":{\"id\":\"100875\",\"className\":\"GROUPS_CMP_WallWidget\",\"clonable\":\"0\",\"componentId\":\"855\",\"clone\":\"0\",\"uniqName\":\"group-GROUPS_CMP_WallWidget\"},\"group-GROUPS_CMP_InviteWidget\":{\"id\":\"100876\",\"className\":\"GROUPS_CMP_InviteWidget\",\"clonable\":\"0\",\"componentId\":\"856\",\"clone\":\"0\",\"uniqName\":\"group-GROUPS_CMP_InviteWidget\"},\"group-BASE_CMP_CustomHtmlWidget\":{\"id\":\"100877\",\"className\":\"BASE_CMP_CustomHtmlWidget\",\"clonable\":\"1\",\"componentId\":\"62\",\"clone\":\"0\",\"uniqName\":\"group-BASE_CMP_CustomHtmlWidget\"},\"group-BASE_CMP_RssWidget\":{\"id\":\"100878\",\"className\":\"BASE_CMP_RssWidget\",\"clonable\":\"1\",\"componentId\":\"69\",\"clone\":\"0\",\"uniqName\":\"group-BASE_CMP_RssWidget\"}},\"defaultPositions\":{\"group-GROUPS_CMP_JoinButtonWidget\":{\"componentPlaceUniqName\":\"group-GROUPS_CMP_JoinButtonWidget\",\"section\":\"left\",\"order\":\"0\",\"id\":\"11599\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":1814355077,\"section\":2053629800,\"order\":4108050209}},\"group-GROUPS_CMP_BriefInfoWidget\":{\"componentPlaceUniqName\":\"group-GROUPS_CMP_BriefInfoWidget\",\"section\":\"top\",\"order\":\"0\",\"id\":\"11593\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":2487494804,\"section\":517545930,\"order\":4108050209}},\"group-GROUPS_CMP_UserListWidget\":{\"componentPlaceUniqName\":\"group-GROUPS_CMP_UserListWidget\",\"section\":\"left\",\"order\":\"1\",\"id\":\"11600\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":3769936975,\"section\":2053629800,\"order\":2212294583}},\"group-GROUPS_CMP_LeaveButtonWidget\":{\"componentPlaceUniqName\":\"group-GROUPS_CMP_LeaveButtonWidget\",\"section\":\"left\",\"order\":\"2\",\"id\":\"11601\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":3855573387,\"section\":2053629800,\"order\":450215437}},\"group-GROUPS_CMP_InviteWidget\":{\"componentPlaceUniqName\":\"group-GROUPS_CMP_InviteWidget\",\"section\":\"left\",\"order\":\"3\",\"id\":\"11602\",\"\\u0000*\\u0000_fieldsHash\":{\"componentPlaceUniqName\":626080855,\"section\":2053629800,\"order\":1842515611}}},\"defaultSettings\":{\"admin-4b543d8cdc488\":{\"content\":\"Welcome to our new site! Feel free to participate in our community!\",\"nl_to_br\":\"0\",\"title\":\"Welcome\",\"show_title\":\"0\",\"icon\":\"ow_ic_warning\",\"wrap_in_box\":\"1\",\"freeze\":\"0\"},\"dashboard-OCSGUESTS_CMP_MyGuestsWidget\":{\"wrap_in_box\":\"0\",\"show_title\":\"1\",\"icon\":\"ow_ic_lens\",\"freeze\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"12\",\"34\"],\"count\":\"8\"},\"index-BASE_CMP_JoinNowWidget\":{\"freeze\":\"0\"},\"index-BASE_CMP_AddNewContent\":{\"freeze\":\"0\"},\"profile-PHOTO_CMP_UserPhotoAlbumsWidget\":{\"freeze\":\"0\",\"albumsCount\":\"4\",\"showTitles\":\"0\",\"show_title\":\"1\",\"icon\":\"ow_ic_picture\",\"wrap_in_box\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"1\",\"12\",\"34\"]},\"profile-BASE_CMP_AboutMeWidget\":{\"freeze\":\"0\"},\"profile-BASE_CMP_UserViewWidget\":{\"show_title\":\"0\",\"icon\":\"ow_ic_add\",\"wrap_in_box\":\"0\",\"freeze\":\"0\",\"restrict_view\":\"0\",\"access_restrictions\":[\"1\",\"12\",\"34\",\"28\",\"30\"]},\"dashboard-BASE_CMP_QuickLinksWidget\":{\"freeze\":\"0\"},\"dashboard-MEMBERSHIP_CMP_MyMembershipWidget\":{\"freeze\":\"1\"},\"profile-MEMBERSHIP_CMP_UserMembershipWidget\":{\"freeze\":\"1\"}},\"defaultScheme\":{\"rightCssClass\":\"ow_superwide\",\"leftCssClass\":\"ow_supernarrow\",\"cssClass\":\"ow_scheme_enew\",\"id\":\"1\"}}', 0);
 
 -- --------------------------------------------------------
@@ -770,19 +764,17 @@ INSERT INTO `ow_base_component_position` (`id`, `componentPlaceUniqName`, `secti
 (6975, 'admin-4c627f1bdc9db', 'top', 0),
 (6986, 'admin-4c62811170310', 'top', 0),
 (11666, 'index-MEMBERSHIP_CMP_PromoWidget', 'sidebar', 1),
-(11750, 'dashboard-OCSGUESTS_CMP_MyGuestsWidget', 'right', 4),
-(11749, 'dashboard-BASE_CMP_WelcomeWidget', 'right', 3),
-(11756, 'mobile.index-USEARCH_MCMP_QuickSearchWidget', 'mobile.main', 3),
+(11833, 'index-SKADATE_CMP_MobileExperience', 'right', 0),
+(11839, 'dashboard-BOOKMARKS_CMP_BookmarksWidget', 'right', 5),
+(11827, 'mobile.index-PHOTO_MCMP_PhotoListWidget', 'mobile.main', 2),
 (11663, 'admin.dashboard-ADMIN_CMP_ContentStatisticWidget', 'top', 2),
 (11662, 'admin.dashboard-ADMIN_CMP_UserStatisticWidget', 'top', 1),
-(11748, 'dashboard-BASE_CMP_ModerationToolsWidget', 'right', 2),
-(11755, 'mobile.index-PHOTO_MCMP_PhotoListWidget', 'mobile.main', 2),
-(11754, 'mobile.index-BASE_MCMP_JoinNowWidget', 'mobile.main', 1),
+(11828, 'mobile.index-USEARCH_MCMP_QuickSearchWidget', 'mobile.main', 3),
 (11665, 'index-BASE_CMP_MyAvatarWidget', 'sidebar', 0),
 (11661, 'admin.dashboard-ADMIN_CMP_FinanceStatisticWidget', 'top', 0),
-(11753, 'mobile.index-SKADATE_MCMP_PromoImageWidget', 'mobile.main', 0),
-(11747, 'dashboard-MATCHMAKING_CMP_MatchesWidget', 'right', 1),
-(11759, 'mobile.dashboard-HOTLIST_MCMP_Widget', 'mobile.main', 1),
+(11840, 'dashboard-SKADATE_CMP_MobileExperience', 'right', 6),
+(11837, 'dashboard-BASE_CMP_WelcomeWidget', 'right', 3),
+(11838, 'dashboard-OCSGUESTS_CMP_MyGuestsWidget', 'right', 4),
 (11741, 'profile-PHOTO_CMP_UserPhotoAlbumsWidget', 'left', 2),
 (11644, 'index-GROUPS_CMP_GroupsWidget', 'left', 2),
 (11593, 'group-GROUPS_CMP_BriefInfoWidget', 'top', 0),
@@ -795,15 +787,15 @@ INSERT INTO `ow_base_component_position` (`id`, `componentPlaceUniqName`, `secti
 (11631, 'profile-BASE_CMP_UserViewWidget', 'right', 1),
 (11743, 'profile-GROUPS_CMP_UserGroupsWidget', 'left', 4),
 (11739, 'profile-MEMBERSHIP_CMP_UserMembershipWidget', 'left', 0),
-(11746, 'dashboard-HOTLIST_CMP_IndexWidget', 'right', 0),
+(11836, 'dashboard-BASE_CMP_ModerationToolsWidget', 'right', 2),
 (11727, 'dashboard-MEMBERSHIP_CMP_MyMembershipWidget', 'left', 0),
 (11728, 'dashboard-BASE_CMP_QuickLinksWidget', 'left', 1),
-(11758, 'mobile.dashboard-BOOKMARKS_MCMP_BookmarksWidget', 'mobile.main', 0),
-(11745, 'index-SKMOBILEAPP_CMP_MobileExperience', 'right', 0),
-(11751, 'dashboard-BOOKMARKS_CMP_BookmarksWidget', 'right', 5),
-(11752, 'dashboard-SKMOBILEAPP_CMP_MobileExperience', 'right', 6),
-(11757, 'mobile.index-SKMOBILEAPP_MCMP_MobileExperience', 'mobile.main', 4),
-(11760, 'mobile.dashboard-SKMOBILEAPP_MCMP_MobileExperience', 'mobile.main', 2);
+(11831, 'mobile.dashboard-HOTLIST_MCMP_Widget', 'mobile.main', 1),
+(11835, 'dashboard-MATCHMAKING_CMP_MatchesWidget', 'right', 1),
+(11834, 'dashboard-HOTLIST_CMP_IndexWidget', 'right', 0),
+(11825, 'mobile.index-SKADATE_MCMP_PromoImageWidget', 'mobile.main', 0),
+(11826, 'mobile.index-BASE_MCMP_JoinNowWidget', 'mobile.main', 1),
+(11830, 'mobile.dashboard-BOOKMARKS_MCMP_BookmarksWidget', 'mobile.main', 0);
 
 -- --------------------------------------------------------
 
@@ -926,7 +918,7 @@ INSERT INTO `ow_base_config` (`id`, `key`, `name`, `value`, `description`) VALUE
 (89, 'photo', 'uninstall_cron_busy', '0', 'Uninstall queue is busy'),
 (115, 'base', 'soft_version', '1.8.4', NULL),
 (139, 'base', 'site_installed', '1', NULL),
-(140, 'base', 'check_mupdates_ts', '1584693827', 'Last manual updates check timestamp.'),
+(140, 'base', 'check_mupdates_ts', '1586235142', 'Last manual updates check timestamp.'),
 (93, 'photo', 'maintenance_mode_state', '0', 'Stores site maintenance mode config before plugin uninstallation'),
 (789, 'membership', 'subscribe_hidden_actions', '[14,11]', 'Actions hidden on subscribe page'),
 (813, 'virtualgifts', 'uninstall_inprogress', '0', 'Plugin is being uninstalled'),
@@ -961,7 +953,7 @@ INSERT INTO `ow_base_config` (`id`, `key`, `name`, `value`, `description`) VALUE
 (768, 'ocsguests', 'store_period', '1', 'Guests visit period, months'),
 (781, 'base', 'install_complete', '1', 'Site is fully installed'),
 (807, 'matchmaking', 'send_new_matches_interval', '7', 'Send new matches to users by email'),
-(808, 'matchmaking', 'last_matches_sent_timestamp', '1585046134', 'Timestamp of the last matchmaking mass mailing'),
+(808, 'matchmaking', 'last_matches_sent_timestamp', '1586235102', 'Timestamp of the last matchmaking mass mailing'),
 (882, 'googlelocation', 'country_restriction', '', NULL),
 (812, 'hotlist', 'expiration_time', '2592000', NULL),
 (810, 'matchmaking', 'cron_busy', '0', 'Mass mailing queue is busy'),
@@ -976,7 +968,7 @@ INSERT INTO `ow_base_config` (`id`, `key`, `name`, `value`, `description`) VALUE
 (822, 'skadate', 'brand_removal', '0', NULL),
 (823, 'skadate', 'license_key', 'SK750gther123', NULL),
 (824, 'skadate', 'license_key_valid', '1', NULL),
-(825, 'base', 'admin_cookie', 'GOM2NOrONEHyn4JEwIPuTyS1ruLOb3hu', NULL),
+(825, 'base', 'admin_cookie', 'obedoQOveQUku5ivEmehoJE93XoTuZUv', NULL),
 (826, 'base', 'disable_mobile_context', '0', NULL),
 (827, 'base', 'log_file_max_size_mb', '20', NULL),
 (828, 'base', 'attch_file_max_size_mb', '2', NULL),
@@ -1004,7 +996,7 @@ INSERT INTO `ow_base_config` (`id`, `key`, `name`, `value`, `description`) VALUE
 (861, 'moderation', 'content_types', '{\"user_join\":false}', NULL),
 (858, 'base', 'avatar_max_upload_size', '1', 'Enable file attachments'),
 (927, 'mailbox', 'enable_attachments', '1', 'Enable file attachments'),
-(860, 'matchmaking', 'cron_busy_timestamp', '1585046134', ''),
+(860, 'matchmaking', 'cron_busy_timestamp', '1586235102', ''),
 (863, 'base', 'site_statistics_disallowed_entity_types', 'user-status,avatar-change', NULL),
 (864, 'skadate', 'promo_image_uploaded', '1', NULL),
 (865, 'usercredits', 'allow_grant_credits', '1', NULL),
@@ -1025,10 +1017,10 @@ INSERT INTO `ow_base_config` (`id`, `key`, `name`, `value`, `description`) VALUE
 (888, 'base', 'seo_sitemap_entitites_limit', '500', NULL),
 (889, 'base', 'seo_sitemap_build_in_progress', '0', NULL),
 (890, 'base', 'seo_sitemap_in_progress', '0', NULL),
-(891, 'base', 'seo_sitemap_in_progress_time', '1586154525', NULL),
+(891, 'base', 'seo_sitemap_in_progress_time', '1586235102', NULL),
 (892, 'base', 'seo_sitemap_last_build', '2', NULL),
 (893, 'base', 'seo_sitemap_last_start', '1584681852', NULL),
-(894, 'base', 'seo_sitemap_entities', '{\"base_pages\":{\"lang_prefix\":\"admin\",\"label\":\"seo_sitemap_base_pages\",\"description\":null,\"items\":[{\"name\":\"base_pages\",\"data_fetched\":true,\"urls_count\":7}],\"enabled\":true,\"priority\":1,\"changefreq\":\"weekly\"},\"users\":{\"lang_prefix\":\"admin\",\"label\":\"seo_sitemap_users\",\"description\":\"seo_sitemap_users_desc\",\"items\":[{\"name\":\"user_list\",\"data_fetched\":true,\"urls_count\":5},{\"name\":\"users\",\"data_fetched\":true,\"urls_count\":1}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"},\"photos\":{\"lang_prefix\":\"photo\",\"label\":\"photo_sitemap\",\"description\":null,\"items\":[{\"name\":\"photo_list\",\"data_fetched\":true,\"urls_count\":4},{\"name\":\"photos\",\"data_fetched\":true,\"urls_count\":0},{\"name\":\"photos_latest\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photos_toprated\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photos_most_discussed\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_albums\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_tags\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_user_albums\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_users\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"},\"groups\":{\"lang_prefix\":\"groups\",\"label\":\"groups_sitemap\",\"description\":\"groups_sitemap_desc\",\"items\":[{\"name\":\"groups_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups_user_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups_authors\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"}}', NULL),
+(894, 'base', 'seo_sitemap_entities', '{\"base_pages\":{\"lang_prefix\":\"admin\",\"label\":\"seo_sitemap_base_pages\",\"description\":null,\"items\":[{\"name\":\"base_pages\",\"data_fetched\":true,\"urls_count\":7}],\"enabled\":true,\"priority\":1,\"changefreq\":\"weekly\"},\"users\":{\"lang_prefix\":\"admin\",\"label\":\"seo_sitemap_users\",\"description\":\"seo_sitemap_users_desc\",\"items\":[{\"name\":\"user_list\",\"data_fetched\":true,\"urls_count\":5},{\"name\":\"users\",\"data_fetched\":true,\"urls_count\":1}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"},\"photos\":{\"lang_prefix\":\"photo\",\"label\":\"photo_sitemap\",\"description\":null,\"items\":[{\"name\":\"photo_list\",\"data_fetched\":true,\"urls_count\":4},{\"name\":\"photos\",\"data_fetched\":true,\"urls_count\":0},{\"name\":\"photos_latest\",\"data_fetched\":true,\"urls_count\":0},{\"name\":\"photos_toprated\",\"data_fetched\":true,\"urls_count\":0},{\"name\":\"photos_most_discussed\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_albums\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_tags\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_user_albums\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"photo_users\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"},\"groups\":{\"lang_prefix\":\"groups\",\"label\":\"groups_sitemap\",\"description\":\"groups_sitemap_desc\",\"items\":[{\"name\":\"groups_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups_user_list\",\"data_fetched\":false,\"urls_count\":0},{\"name\":\"groups_authors\",\"data_fetched\":false,\"urls_count\":0}],\"enabled\":true,\"priority\":0.5,\"changefreq\":\"weekly\"}}', NULL),
 (895, 'base', 'seo_sitemap_schedule_update', 'weekly', NULL),
 (896, 'base', 'seo_sitemap_index', '0', NULL),
 (897, 'base', 'seo_meta_info', '{\"disabledEntities\":[]}', NULL),
@@ -1060,29 +1052,7 @@ INSERT INTO `ow_base_config` (`id`, `key`, `name`, `value`, `description`) VALUE
 (934, 'mailbox', 'send_message_interval', '60', NULL),
 (935, 'skadate', 'notify_admin_about_invalid_items', '0', NULL),
 (938, 'googlelocation', 'display_map_on_profile_pages', '0', NULL),
-(940, 'gdpr', 'gdpr_third_party_services', '0', 'gdpr+gdpr_third_party_services_desc'),
-(941, 'skmobileapp', 'import_location_last_user_id', '2', NULL),
-(942, 'skmobileapp', 'ads_api_key', '', NULL),
-(943, 'skmobileapp', 'ads_enabled', '0', NULL),
-(944, 'skmobileapp', 'pn_sender_id', '', NULL),
-(945, 'skmobileapp', 'pn_server_key', '', NULL),
-(946, 'skmobileapp', 'pn_apns_pass_phrase', '', NULL),
-(947, 'skmobileapp', 'pn_apns_mode', '', NULL),
-(948, 'skmobileapp', 'pn_enabled', '1', NULL),
-(949, 'skmobileapp', 'inapps_enable', '1', NULL),
-(950, 'skmobileapp', 'inapps_apm_key', '', NULL),
-(951, 'skmobileapp', 'inapps_itunes_shared_secret', '', NULL),
-(952, 'skmobileapp', 'inapps_ios_test_mode', '0', NULL),
-(953, 'skmobileapp', 'inapps_show_membership_actions', 'app_only', NULL),
-(954, 'skmobileapp', 'ios_app_url', 'https://itunes.apple.com/in/app/date-finder-app/id1263891062?mt=8', NULL),
-(955, 'skmobileapp', 'android_app_url', 'https://play.google.com/store/apps/details?id=com.skmobile&hl=en', NULL),
-(956, 'skmobileapp', 'search_mode', 'both', NULL),
-(957, 'skmobileapp', 'inapps_apm_package_name', '', NULL),
-(958, 'skmobileapp', 'inapps_apm_android_client_email', '', NULL),
-(959, 'skmobileapp', 'inapps_apm_android_private_key', '', NULL),
-(960, 'skmobileapp', 'service_account_auth_expiration_time', '', NULL),
-(961, 'skmobileapp', 'service_account_auth_token', '', NULL),
-(962, 'skmobileapp', 'google_map_api_key', '', NULL);
+(940, 'gdpr', 'gdpr_third_party_services', '0', 'gdpr+gdpr_third_party_services_desc');
 
 -- --------------------------------------------------------
 
@@ -1101,62 +1071,62 @@ CREATE TABLE `ow_base_cron_job` (
 --
 
 INSERT INTO `ow_base_cron_job` (`id`, `methodName`, `runStamp`) VALUES
-(2718, 'BASE_Cron::run', 1586154523),
-(2719, 'BASE_Cron::dbCacheProcess', 1586154523),
-(2720, 'BASE_Cron::mailQueueProcess', 1586154523),
-(2721, 'BASE_Cron::deleteExpiredOnlineUserProcess', 1586154523),
+(2777, 'BASE_Cron::run', 1586235102),
+(2778, 'BASE_Cron::dbCacheProcess', 1586235102),
+(2737, 'BASE_Cron::mailQueueProcess', 1586234952),
+(2779, 'BASE_Cron::deleteExpiredOnlineUserProcess', 1586235102),
 (2722, 'BASE_Cron::checkPluginUpdates', 1586154523),
-(2723, 'BASE_Cron::deleteExpiredPasswordResetCodes', 1586154525),
-(2724, 'BASE_Cron::resetCronFlag', 1586154525),
+(2739, 'BASE_Cron::deleteExpiredPasswordResetCodes', 1586234952),
+(2780, 'BASE_Cron::resetCronFlag', 1586235102),
 (2725, 'BASE_Cron::rmTempAttachments', 1586154525),
 (2726, 'BASE_Cron::rmTempAvatars', 1586154525),
 (2727, 'BASE_Cron::deleteExpiredCache', 1586154525),
 (2728, 'BASE_Cron::dropLogFile', 1586154525),
 (2729, 'BASE_Cron::clearMySqlSearchIndex', 1586154525),
-(2730, 'BASE_Cron::expireSearchResultList', 1586154525),
-(2731, 'BASE_Cron::generateSitemap', 1586154525),
-(2732, 'BASE_Cron::checkRealCron', 1586154525),
-(2733, 'SKADATE_Cron::run', 1586154525),
+(2781, 'BASE_Cron::expireSearchResultList', 1586235102),
+(2782, 'BASE_Cron::generateSitemap', 1586235102),
+(2783, 'BASE_Cron::checkRealCron', 1586235102),
+(2784, 'SKADATE_Cron::run', 1586235102),
 (2734, 'SKADATE_Cron::validateKey', 1586154525),
-(2692, 'HOTLIST_Cron::run', 1585311828),
-(2693, 'HOTLIST_Cron::clearExpiredUsers', 1585311828),
-(2694, 'OCSGUESTS_Cron::run', 1585311828),
-(2695, 'OCSGUESTS_Cron::guestsCheckProcess', 1585311828),
-(2696, 'MEMBERSHIP_Cron::run', 1585311828),
-(2697, 'MEMBERSHIP_Cron::membershipExpireProcess', 1585311828),
-(2698, 'PHOTO_Cron::run', 1585311828),
-(2699, 'PHOTO_Cron::albumsDeleteProcess', 1585311828),
-(2700, 'PHOTO_Cron::contentIndexing', 1585311828),
-(2701, 'PHOTO_Cron::cleareCache', 1585311828),
-(2621, 'PHOTO_Cron::deleteLimitedPhotos', 1585304867),
-(2702, 'PHOTO_Cron::updatePhotoTags', 1585311828),
-(2703, 'MAILBOX_Cron::run', 1585311828),
-(2704, 'MAILBOX_Cron::convertMailboxToChat', 1585311828),
-(2705, 'MAILBOX_Cron::resetAllUsersLastData', 1585311828),
-(2626, 'MAILBOX_Cron::deleteAttachmentFiles', 1585304867),
-(2706, 'MATCHMAKING_Cron::run', 1585311828),
-(2707, 'MATCHMAKING_Cron::sendNewMatches', 1585311828),
-(2708, 'NOTIFICATIONS_Cron::run', 1585311828),
-(2630, 'NOTIFICATIONS_Cron::expireUnsubscribe', 1585304867),
-(2631, 'NOTIFICATIONS_Cron::deleteExpired', 1585304867),
-(2709, 'NOTIFICATIONS_Cron::fillSendQueue', 1585311828),
+(2785, 'HOTLIST_Cron::run', 1586235102),
+(2746, 'HOTLIST_Cron::clearExpiredUsers', 1586234952),
+(2786, 'OCSGUESTS_Cron::run', 1586235102),
+(2748, 'OCSGUESTS_Cron::guestsCheckProcess', 1586234952),
+(2787, 'MEMBERSHIP_Cron::run', 1586235102),
+(2750, 'MEMBERSHIP_Cron::membershipExpireProcess', 1586234952),
+(2788, 'PHOTO_Cron::run', 1586235102),
+(2789, 'PHOTO_Cron::albumsDeleteProcess', 1586235102),
+(2790, 'PHOTO_Cron::contentIndexing', 1586235102),
+(2754, 'PHOTO_Cron::cleareCache', 1586234952),
+(2755, 'PHOTO_Cron::deleteLimitedPhotos', 1586234952),
+(2791, 'PHOTO_Cron::updatePhotoTags', 1586235102),
+(2792, 'MAILBOX_Cron::run', 1586235102),
+(2793, 'MAILBOX_Cron::convertMailboxToChat', 1586235102),
+(2794, 'MAILBOX_Cron::resetAllUsersLastData', 1586235102),
+(2760, 'MAILBOX_Cron::deleteAttachmentFiles', 1586234952),
+(2795, 'MATCHMAKING_Cron::run', 1586235102),
+(2796, 'MATCHMAKING_Cron::sendNewMatches', 1586235102),
+(2797, 'NOTIFICATIONS_Cron::run', 1586235102),
+(2764, 'NOTIFICATIONS_Cron::expireUnsubscribe', 1586234952),
+(2765, 'NOTIFICATIONS_Cron::deleteExpired', 1586234952),
+(2766, 'NOTIFICATIONS_Cron::fillSendQueue', 1586234952),
 (2140, 'VIRTUALGIFTS_Cron::run', 1584686674),
 (2141, 'VIRTUALGIFTS_Cron::templatesDeleteProcess', 1584686674),
-(2710, 'BOOKMARKS_Cron::run', 1585311828),
-(2711, 'BOOKMARKS_Cron::sendNotify', 1585311828),
-(2712, 'WINKS_Cron::run', 1585311828),
-(2636, 'WINKS_Cron::deleteExpiredData', 1585304867),
-(2713, 'GROUPS_Cron::run', 1585311828),
-(2714, 'PRIVACY_Cron::run', 1585311828),
+(2798, 'BOOKMARKS_Cron::run', 1586235102),
+(2768, 'BOOKMARKS_Cron::sendNotify', 1586234952),
+(2799, 'WINKS_Cron::run', 1586235102),
+(2770, 'WINKS_Cron::deleteExpiredData', 1586234952),
+(2800, 'GROUPS_Cron::run', 1586235102),
+(2801, 'PRIVACY_Cron::run', 1586235102),
 (1554, 'VIDEOIM_Cron::run', 1544073485),
 (1527, 'VIDEOIM_Cron::deleteExpiredNotifications', 1544073410),
 (1582, 'SLIDESHOW_Cron::run', 1544073528),
 (1583, 'SLIDESHOW_Cron::slideDeleteProcess', 1544073528),
 (1584, 'SLIDESHOW_Cron::slideshowUninstallProcess', 1544073528),
-(2715, 'SKMOBILEAPP_Cron::run', 1585311828),
-(2640, 'SKMOBILEAPP_Cron::cleanDeviceTokens', 1585304867),
-(2716, 'SKMOBILEAPP_Cron::cleanWebPushMessages', 1585311828),
-(2717, 'SKMOBILEAPP_Cron::cleanExpiredUsersSubscriptions', 1585311828);
+(2802, 'SKMOBILEAPP_Cron::run', 1586235102),
+(2774, 'SKMOBILEAPP_Cron::cleanDeviceTokens', 1586234952),
+(2775, 'SKMOBILEAPP_Cron::cleanWebPushMessages', 1586234952),
+(2803, 'SKMOBILEAPP_Cron::cleanExpiredUsersSubscriptions', 1586235102);
 
 -- --------------------------------------------------------
 
@@ -5902,390 +5872,7 @@ INSERT INTO `ow_base_language_key` (`id`, `prefixId`, `key`) VALUES
 (21772, 321, 'third_party_message_feedback'),
 (21773, 321, 'third_party_note'),
 (21783, 322, 'privacy_only_for_me'),
-(21784, 322, 'privacy_submit_button'),
-(21785, 323, 'pwa_install_close_confirm_message'),
-(21786, 323, 'pwa_install_close_confirm_dismiss'),
-(21787, 323, 'pwa_install_close_confirm_later'),
-(21788, 323, 'pwa_install'),
-(21789, 323, 'pwa_label'),
-(21790, 323, 'pwa_installation_guide'),
-(21791, 323, 'howto_download_pwa'),
-(21792, 323, 'guide_step1_android_title'),
-(21793, 323, 'guide_step1_android'),
-(21794, 323, 'guide_step2_android_title'),
-(21795, 323, 'guide_step2_android'),
-(21796, 323, 'guide_step1_ios_title'),
-(21797, 323, 'guide_step1_ios'),
-(21798, 323, 'guide_step2_ios_title'),
-(21799, 323, 'guide_step2_ios'),
-(21800, 323, 'guide_button'),
-(21801, 323, 'pwa_install_close_confirm_title'),
-(21802, 323, 'preference_label_skmobileapp_new_messages_push'),
-(21803, 323, 'preference_label_skmobileapp_new_matches_push'),
-(21804, 323, 'app_settings_notifications_label'),
-(21805, 323, 'app_settings_email_label'),
-(21806, 323, 'app_settings_push_label'),
-(21807, 323, 'preferences_saved'),
-(21808, 323, 'plugin_delete_warning'),
-(21809, 323, 'preferences_page_description'),
-(21810, 323, 'preferences_pushes_page_title'),
-(21811, 323, 'skmobileapp_email_notifications_section_label'),
-(21812, 323, 'skmobileapp_email_notifications_new_match_message'),
-(21813, 323, 'email_notifications_page_description'),
-(21814, 323, 'email_notifications_page_title'),
-(21815, 323, 'email_settings_saved'),
-(21816, 323, 'new_match_notification_string'),
-(21817, 323, 'email_setting_label_mailbox-new_chat_message'),
-(21818, 323, 'email_setting_label_skmobileapp-new_match_message'),
-(21819, 323, 'form_general_error'),
-(21820, 323, 'inapps_enable'),
-(21821, 323, 'losing_credits'),
-(21822, 323, 'receiving_credits'),
-(21823, 323, 'cost_of_actions_page_title'),
-(21824, 323, 'expires'),
-(21825, 323, 'membership_trial_error'),
-(21826, 323, 'purchase_cancelled'),
-(21827, 323, 'membership_trial_added'),
-(21828, 323, 'membership_updated'),
-(21829, 323, 'credits_updated'),
-(21830, 323, 'credit_pack'),
-(21831, 323, 'membership_plan'),
-(21832, 323, 'membership_trial_plan'),
-(21833, 323, 'view_video'),
-(21834, 323, 'new_guests_counter'),
-(21835, 323, 'app_recurring_information_label'),
-(21836, 323, 'app_ios_recurring_information_description'),
-(21837, 323, 'app_android_recurring_information_description'),
-(21838, 323, 'app_mobile_recurring_information_description'),
-(21839, 323, 'inapps_all_membership_actions'),
-(21840, 323, 'inapps_app_only_membership_actions'),
-(21841, 323, 'inapps_show_membership_actions'),
-(21842, 323, 'inapps_show_membership_actions_desc'),
-(21843, 323, 'tinder_nomatches_left_header'),
-(21844, 323, 'tinder_about_me'),
-(21845, 323, 'tinder_nomatches_left_desc'),
-(21846, 323, 'location_error_desc'),
-(21847, 323, 'gateway_page_title'),
-(21848, 323, 'payment_success_finished_message'),
-(21849, 323, 'billing_page_title'),
-(21850, 323, 'billing_card_details'),
-(21851, 323, 'billing_card_number'),
-(21852, 323, 'billing_card_number_placeholder'),
-(21853, 323, 'billing_cvc'),
-(21854, 323, 'billing_cvc_placeholder'),
-(21855, 323, 'billing_expiration_date'),
-(21856, 323, 'billing_expiration_date_placeholder'),
-(21857, 323, 'billing_card_name'),
-(21858, 323, 'billing_card_name_placeholder'),
-(21859, 323, 'billing_country'),
-(21860, 323, 'billing_country_placeholder'),
-(21861, 323, 'billing_address'),
-(21862, 323, 'billing_address_placeholder'),
-(21863, 323, 'billing_zip'),
-(21864, 323, 'billing_zip_placeholder'),
-(21865, 323, 'billing_state'),
-(21866, 323, 'billing_state_placeholder'),
-(21867, 323, 'billing_information'),
-(21868, 323, 'profile_cannot_be_viewed'),
-(21869, 323, 'location_issue_title'),
-(21870, 323, 'location_issue_desc'),
-(21871, 323, 'check_location'),
-(21872, 323, 'missing_plugins_error'),
-(21873, 323, 'missing_push_settings_error'),
-(21874, 323, 'missing_google_api_setting_error'),
-(21875, 323, 'missing_google_monetizations_settings_error'),
-(21876, 323, 'search_mode_label'),
-(21877, 323, 'search_mode_both'),
-(21878, 323, 'search_mode_tinder'),
-(21879, 323, 'search_mode_browse'),
-(21880, 323, 'buy_upgrades_page_header'),
-(21881, 323, 'no_internet'),
-(21882, 323, 'back_to_starter_page_button'),
-(21883, 323, 'matched_user_desc'),
-(21884, 323, 'matched_user_page_header'),
-(21885, 323, 'compatible_users_page_header'),
-(21886, 323, 'hot_list_empty_desc'),
-(21887, 323, 'profile_removed_from_guests'),
-(21888, 323, 'delete_guest_confirmation'),
-(21889, 323, 'guests_page_header'),
-(21890, 323, 'delete_bookmark_confirmation'),
-(21891, 323, 'unmark'),
-(21892, 323, 'keep_playing'),
-(21893, 323, 'send_message'),
-(21894, 323, 'bookmarks_page_header'),
-(21895, 323, 'decrease_credits_notification'),
-(21896, 323, 'increase_credits_notification'),
-(21897, 323, 'hot_list_join_confirmation'),
-(21898, 323, 'hot_list_delete_confirmation'),
-(21899, 323, 'hot_list_join'),
-(21900, 323, 'hot_list_remove'),
-(21901, 323, 'mailbox_unread_messages'),
-(21902, 323, 'mailbox_send_message_promotion_desc'),
-(21903, 323, 'maintenance_mode_error'),
-(21904, 323, 'email_not_confirmed_error'),
-(21905, 323, 'complete_account_desc'),
-(21906, 323, 'account_type_not_completed_error'),
-(21907, 323, 'profile_not_completed_error'),
-(21908, 323, 'profile_disapproved_error'),
-(21909, 323, 'profile_suspended_error'),
-(21910, 323, 'mailbox_wink_received_desc'),
-(21911, 323, 'mailbox_wink_sent_desc'),
-(21912, 323, 'mailbox_start_conversation_desc'),
-(21913, 323, 'read_mailbox_message'),
-(21914, 323, 'view_mailbox_message_upgrade'),
-(21915, 323, 'view_mailbox_message_denied'),
-(21916, 323, 'resend_message'),
-(21917, 323, 'delete_message_confirmation'),
-(21918, 323, 'delete_message'),
-(21919, 323, 'send'),
-(21920, 323, 'conversation_has_been_marked_as_read'),
-(21921, 323, 'conversation_has_been_marked_as_unread'),
-(21922, 323, 'conversation_has_been_deleted'),
-(21923, 323, 'mark_unread_conversation'),
-(21924, 323, 'mark_read_conversation'),
-(21925, 323, 'delete_conversation'),
-(21926, 323, 'delete_conversation_confirmation'),
-(21927, 323, 'conversation_new_message'),
-(21928, 323, 'conversations_no_results'),
-(21929, 323, 'conversations_empty_title'),
-(21930, 323, 'conversations_empty_descr'),
-(21931, 323, 'conversations_no_lists_title'),
-(21932, 323, 'conversations_no_lists_descr'),
-(21933, 323, 'new_messages'),
-(21934, 323, 'new_matches'),
-(21935, 323, 'manage_photos'),
-(21936, 323, 'view_all_photos'),
-(21937, 323, 'profile_added_to_bookmarks'),
-(21938, 323, 'profile_removed_from_bookmarks'),
-(21939, 323, 'flag_page_header'),
-(21940, 323, 'profile_blocked'),
-(21941, 323, 'profile_unblocked'),
-(21942, 323, 'block_profile_confirmation'),
-(21943, 323, 'block_profile'),
-(21944, 323, 'unblock_profile'),
-(21945, 323, 'photo_reported'),
-(21946, 323, 'profile_reported'),
-(21947, 323, 'flag_input'),
-(21948, 323, 'flag_as_illegal'),
-(21949, 323, 'flag_as_offence'),
-(21950, 323, 'flag_as_spam'),
-(21951, 323, 'flag_profile'),
-(21952, 323, 'flag_photo'),
-(21953, 323, 'compatibility'),
-(21954, 323, 'like'),
-(21955, 323, 'like_confirmation'),
-(21956, 323, 'dislike'),
-(21957, 323, 'dislike_confirmation'),
-(21958, 323, 'upgrade'),
-(21959, 323, 'permission_denied_header'),
-(21960, 323, 'empty_user_search_header'),
-(21961, 323, 'empty_user_search_desc'),
-(21962, 323, 'miles_away'),
-(21963, 323, 'km_away'),
-(21964, 323, 'within_miles'),
-(21965, 323, 'within_km'),
-(21966, 323, 'with_photo_input'),
-(21967, 323, 'online_input'),
-(21968, 323, 'advanced_search_input_section'),
-(21969, 323, 'search_filter_page_header'),
-(21970, 323, 'search_filter'),
-(21971, 323, 'app_error_page_header'),
-(21972, 323, 'app_error_page_description'),
-(21973, 323, 'avatar_approval_text'),
-(21974, 323, 'photos_approval_text'),
-(21975, 323, 'avatar_and_photos_approval_text'),
-(21976, 323, 'permission_denied_alert_title'),
-(21977, 323, 'permission_denied_alert_message'),
-(21978, 323, 'purchase'),
-(21979, 323, 'edit_user_photos_page_header'),
-(21980, 323, 'photo_set_avatar'),
-(21981, 323, 'photo_has_been_deleted'),
-(21982, 323, 'avatar_has_been_deleted'),
-(21983, 323, 'avatar_has_been_uploaded'),
-(21984, 323, 'photo_has_been_uploaded'),
-(21985, 323, 'yes'),
-(21986, 323, 'nope'),
-(21987, 323, 'delete_photo_confirmation'),
-(21988, 323, 'delete_avatar_confirmation'),
-(21989, 323, 'delete_avatar'),
-(21990, 323, 'delete_photo'),
-(21991, 323, 'upload_photo'),
-(21992, 323, 'set_avatar'),
-(21993, 323, 'change_site_url'),
-(21994, 323, 'change_site_url_page_header'),
-(21995, 323, 'site_address_error'),
-(21996, 323, 'site_address_input'),
-(21997, 323, 'site_address_input_require_error'),
-(21998, 323, 'select_input_empty_value'),
-(21999, 323, 'complete_account_type_page_header'),
-(22000, 323, 'complete_profile_page_header'),
-(22001, 323, 'app_settings_basic_information_label'),
-(22002, 323, 'app_settings_privacy_policy_label'),
-(22003, 323, 'app_settings_terms_of_use_label'),
-(22004, 323, 'app_settings_delete_account_button'),
-(22005, 323, 'app_settings_delete_account_confirmation'),
-(22006, 323, 'profile_updated'),
-(22007, 323, 'edit_user_page_header'),
-(22008, 323, 'logout'),
-(22009, 323, 'edit_profile'),
-(22010, 323, 'maintenance_mode'),
-(22011, 323, 'profile_is_pending_approval'),
-(22012, 323, 'profile_suspended'),
-(22013, 323, 'reason'),
-(22014, 323, 'close'),
-(22015, 323, 'tos_agree_button'),
-(22016, 323, 'tos_agree_input_error'),
-(22017, 323, 'tos_page_content'),
-(22018, 323, 'tos_page_header'),
-(22019, 323, 'tos_section'),
-(22020, 323, 'privacy_policy_page_header'),
-(22021, 323, 'privacy_policy_page_content'),
-(22022, 323, 'url_validator_error'),
-(22023, 323, 'choose_location_page_header'),
-(22024, 323, 'choose_location_input'),
-(22025, 323, 'search'),
-(22026, 323, 'looking_for_input'),
-(22027, 323, 'date_input_days_short'),
-(22028, 323, 'date_input_days'),
-(22029, 323, 'date_input_months_short'),
-(22030, 323, 'date_input_months'),
-(22031, 323, 'choose_date'),
-(22032, 323, 'done'),
-(22033, 323, 'max_length_validator_error'),
-(22034, 323, 'min_length_validator_error'),
-(22035, 323, 'password_min_length_validator_error'),
-(22036, 323, 'password_max_length_validator_error'),
-(22037, 323, 'cancel'),
-(22038, 323, 'keep_empty'),
-(22039, 323, 'password_repeat_validator_error'),
-(22040, 323, 'gender_input'),
-(22041, 323, 'email_input'),
-(22042, 323, 'email_input_placeholder'),
-(22043, 323, 'base_input_section'),
-(22044, 323, 'password_repeat_input'),
-(22045, 323, 'password_repeat_input_placeholder'),
-(22046, 323, 'avatar_input_error'),
-(22047, 323, 'password_input'),
-(22048, 323, 'password_input_placeholder'),
-(22049, 323, 'username_input'),
-(22050, 323, 'username_input_placeholder'),
-(22051, 323, 'choose_avatar'),
-(22052, 323, 'next'),
-(22053, 323, 'join_page_header'),
-(22054, 323, 'back'),
-(22055, 323, 'email_validator_error'),
-(22056, 323, 'require_validator_error'),
-(22057, 323, 'user_email_validator_error'),
-(22058, 323, 'user_name_validator_error'),
-(22059, 323, 'error_uploading_file'),
-(22060, 323, 'error_file_mime_type'),
-(22061, 323, 'error_file_exceeds_max_upload_size'),
-(22062, 323, 'login'),
-(22063, 323, 'sign_up'),
-(22064, 323, 'forgot_password_invalid_email'),
-(22065, 323, 'forgot_password_reset_successful'),
-(22066, 323, 'forgot_password_email_input'),
-(22067, 323, 'forgot_password_email_input_placeholder'),
-(22068, 323, 'forgot_password_code_input'),
-(22069, 323, 'forgot_password_code_input_placeholder'),
-(22070, 323, 'forgot_password_code_invalid'),
-(22071, 323, 'forgot_password_email_check_desc'),
-(22072, 323, 'forgot_password_code_check_desc'),
-(22073, 323, 'forgot_password_new_password_desc'),
-(22074, 323, 'login_input'),
-(22075, 323, 'forgot_password_input'),
-(22076, 323, 'forgot_password_input_placeholder'),
-(22077, 323, 'login_failed'),
-(22078, 323, 'error_occurred'),
-(22079, 323, 'ok'),
-(22080, 323, 'forgot_password'),
-(22081, 323, 'forgot_password_check_email_page_title'),
-(22082, 323, 'forgot_password_check_code_page_title'),
-(22083, 323, 'forgot_password_new_password_page_title'),
-(22084, 323, 'ads_label'),
-(22085, 323, 'ads_enabled_label'),
-(22086, 323, 'ads_desc'),
-(22087, 323, 'ads_submit'),
-(22088, 323, 'ads_settings'),
-(22089, 323, 'menu_ads_label'),
-(22090, 323, 'admin_settings'),
-(22091, 323, 'facebook_connect_login_label'),
-(22092, 323, 'verify_email_back_button'),
-(22093, 323, 'verify_email_check_code_page_desc'),
-(22094, 323, 'verify_email_check_email_page_desc'),
-(22095, 323, 'verify_email_resend_button'),
-(22096, 323, 'verify_email_done_button'),
-(22097, 323, 'verify_email_email_input'),
-(22098, 323, 'verify_email_email_input_placeholder'),
-(22099, 323, 'verify_email_code_input'),
-(22100, 323, 'verify_email_code_input_placeholder'),
-(22101, 323, 'verify_email_invalid_code'),
-(22102, 323, 'verify_email_registration_successful'),
-(22103, 323, 'verify_email_verification_successful'),
-(22104, 323, 'verify_email_mail_sent'),
-(22105, 323, 'verify_email_open_check_email_page'),
-(22106, 323, 'menu_push_label'),
-(22107, 323, 'pn_enabled_label'),
-(22108, 323, 'pn_sender_id_label'),
-(22109, 323, 'pn_sender_id_desc'),
-(22110, 323, 'pn_server_key_label'),
-(22111, 323, 'pn_server_key_desc'),
-(22112, 323, 'pn_apns_mode_label'),
-(22113, 323, 'pn_apns_mode_test'),
-(22114, 323, 'pn_apns_mode_live'),
-(22115, 323, 'pn_apns_cert_label'),
-(22116, 323, 'pn_apns_cert_desc'),
-(22117, 323, 'pn_apns_pass_phrase_label'),
-(22118, 323, 'pn_apns_pass_phrase_desc'),
-(22119, 323, 'pn_submit'),
-(22120, 323, 'pn_new_message'),
-(22121, 323, 'pn_new_message_title'),
-(22122, 323, 'pn_new_match_title'),
-(22123, 323, 'pn_new_match'),
-(22124, 323, 'memberships'),
-(22125, 323, 'no_memberships'),
-(22126, 323, 'no_credits'),
-(22127, 323, 'credits'),
-(22128, 323, 'credits_info_not_available_title'),
-(22129, 323, 'credits_info_not_available_message'),
-(22130, 323, 'your_membership'),
-(22131, 323, 'recurring'),
-(22132, 323, 'your_credits'),
-(22133, 323, 'menu_inapps_label'),
-(22134, 323, 'inapps_apm_key_label'),
-(22135, 323, 'inapps_apm_key_desc'),
-(22136, 323, 'inapps_itunes_shared_secret_label'),
-(22137, 323, 'inapps_itunes_shared_secret_desc'),
-(22138, 323, 'inapps_ios_test_mode_label'),
-(22139, 323, 'inapps_submit'),
-(22140, 323, 'profile_edit_profile'),
-(22141, 323, 'profile_app_settings'),
-(22142, 323, 'profile_my_guests'),
-(22143, 323, 'profile_bookmarks'),
-(22144, 323, 'profile_compatible_users'),
-(22145, 323, 'profile_buy_upgrades'),
-(22146, 323, 'general'),
-(22147, 323, 'android'),
-(22148, 323, 'ios'),
-(22149, 323, 'menu_settings_label'),
-(22150, 323, 'app_romotion_label'),
-(22151, 323, 'ios_app_url_label'),
-(22152, 323, 'android_app_url_label'),
-(22153, 323, 'settings_submit'),
-(22154, 323, 'settings_saved'),
-(22155, 323, 'default_app_url_desc'),
-(22156, 323, 'inapps_apm_package_name_label'),
-(22157, 323, 'inapps_apm_package_name_desc'),
-(22158, 323, 'inapps_apm_android_account_key_label'),
-(22159, 323, 'inapps_apm_android_account_key_desc'),
-(22160, 323, 'inapps_android_platform_label'),
-(22161, 323, 'inapps_ios_platform_label'),
-(22162, 323, 'settings_account_private_key_label'),
-(22163, 323, 'settings_android_client_email_label'),
-(22164, 323, 'invalid_android_account_key'),
-(22165, 323, 'google_map_api_key_label'),
-(22166, 323, 'google_map_api_key_desc'),
-(22167, 323, 'gateway_title');
+(21784, 322, 'privacy_submit_button');
 
 -- --------------------------------------------------------
 
@@ -6346,8 +5933,7 @@ INSERT INTO `ow_base_language_prefix` (`id`, `prefix`, `label`) VALUES
 (315, 'slpremiumtheme', 'SkaDate premium theme support'),
 (316, 'customindex', 'Customized index page'),
 (319, 'billingstripe', 'Stripe Billing'),
-(321, 'gdpr', 'GDPR'),
-(323, 'skmobileapp', 'Skadate Mobile APP');
+(321, 'gdpr', 'GDPR');
 
 -- --------------------------------------------------------
 
@@ -16501,390 +16087,7 @@ INSERT INTO `ow_base_language_value` (`id`, `languageId`, `keyId`, `value`) VALU
 (81767, 1, 21781, 'Private'),
 (81768, 1, 21782, '{$display_name} chooses not to share this content.'),
 (81769, 1, 21783, 'Only me'),
-(81770, 1, 21784, 'Save'),
-(81771, 1, 21785, 'Sure you don\'t want to install {{appName}}'),
-(81772, 1, 21786, 'Dismiss'),
-(81773, 1, 21787, 'Later'),
-(81774, 1, 21788, 'Install'),
-(81775, 1, 21789, 'PWA'),
-(81776, 1, 21790, 'Installation Guide'),
-(81777, 1, 21791, 'How to Download App'),
-(81778, 1, 21792, 'Step 1'),
-(81779, 1, 21793, 'Tap the ‘More’ button at the top right corner of the screen.'),
-(81780, 1, 21794, 'Step 2'),
-(81781, 1, 21795, 'Tap ‘Add to Home Screen’.'),
-(81782, 1, 21796, 'Step 1'),
-(81783, 1, 21797, 'Tap the ‘Share’ button at the bottom of the screen.'),
-(81784, 1, 21798, 'Step 2'),
-(81785, 1, 21799, 'Tap ‘Add to Home Screen’.'),
-(81786, 1, 21800, 'Got it!'),
-(81787, 1, 21801, 'Reminder options'),
-(81788, 1, 21802, 'New Messages'),
-(81789, 1, 21803, 'New Matches'),
-(81790, 1, 21804, 'Notifications'),
-(81791, 1, 21805, 'Email'),
-(81792, 1, 21806, 'Push'),
-(81793, 1, 21807, 'Preferences saved'),
-(81794, 1, 21808, 'Plugin cannot be deleted due to admin settings'),
-(81795, 1, 21809, 'Settings'),
-(81796, 1, 21810, 'Push notifications'),
-(81797, 1, 21811, 'Skmobile App'),
-(81798, 1, 21812, 'Someone has matched with you'),
-(81799, 1, 21813, 'Control the emails you want to get - all of them, just the important stuff or the bare minimum'),
-(81800, 1, 21814, 'Email notifications'),
-(81801, 1, 21815, 'Email settings saved'),
-(81802, 1, 21816, 'You’ve got a new match!'),
-(81803, 1, 21817, 'New Messages'),
-(81804, 1, 21818, 'New Matches'),
-(81805, 1, 21819, 'Please fill the fields correctly to continue'),
-(81806, 1, 21820, 'Enable monetization'),
-(81807, 1, 21821, 'Losing credits'),
-(81808, 1, 21822, 'Receiving credits'),
-(81809, 1, 21823, 'Cost of actions'),
-(81810, 1, 21824, 'Expires'),
-(81811, 1, 21825, 'Trial membership can be used only once'),
-(81812, 1, 21826, 'The purchase is cancelled. Please try again later.'),
-(81813, 1, 21827, 'You have been granted {{amountDays}} days of the trial membership'),
-(81814, 1, 21828, 'You have been updated your membership'),
-(81815, 1, 21829, 'You have been bought {{count}} credits'),
-(81816, 1, 21830, '{{currency}} {{price}}'),
-(81817, 1, 21831, '<span>{{currency}} {{price}}</span><span>per {{period}} {{periodUnits}}</span>'),
-(81818, 1, 21832, '<span>Trial</span><span>{{period}} {{periodUnits}}</span>'),
-(81819, 1, 21833, 'View video'),
-(81820, 1, 21834, '{{count}} new guest(s) available'),
-(81821, 1, 21835, 'Subscription Information'),
-(81822, 1, 21836, '<ul><li>Payment will be charged to iTunes Account at confirmation of purchase</li><li>Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period</li><li>Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal</li><li>Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user’s Account Settings after purchase</li><li>Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable</li></ul>'),
-(81823, 1, 21837, '<ul><li>Payment will be charged to Google Account at confirmation of purchase</li><li>To cancel subscription open the Google Play Store from your phone or tablet. Tap \"Menu\" >> \"Subscriptions\". Tap the subscription you want to cancel. Tap \"Cancel subscriptions\" and follow the onscreen instructions</li></ul>'),
-(81824, 1, 21838, '<ul><li>To cancel PayPal subscription: Log in to your PayPal account at www.paypal.com. Click the Settings icon next to \"Log out.\" Select Preapproved Payments under \"Payment settings.\" Select the merchant whose agreement you want to cancel and click the Cancel Subscription button.</li><li>To cancel credit card subscription: Contact the issuer of your credit card.</li></ul>'),
-(81825, 1, 21839, 'All membership actions'),
-(81826, 1, 21840, 'App-related membership actions'),
-(81827, 1, 21841, 'Display of available membership actions in Apps'),
-(81828, 1, 21842, 'Choose which membership actions are shown to mobile apps users - all membership actions available for both, desktop website and mobile apps, or only actions related strictly to mobile apps.'),
-(81829, 1, 21843, 'You\'ve run out of matches!'),
-(81830, 1, 21844, 'About me'),
-(81831, 1, 21845, 'Please try again a bit later.'),
-(81832, 1, 21846, 'Your location still is not available. Check your phone\'s settings and try again'),
-(81833, 1, 21847, 'Payment method'),
-(81834, 1, 21848, 'Your payment successfully finished'),
-(81835, 1, 21849, 'Billing information'),
-(81836, 1, 21850, 'Card details'),
-(81837, 1, 21851, 'Card number'),
-(81838, 1, 21852, 'Specify your card number'),
-(81839, 1, 21853, 'CVC'),
-(81840, 1, 21854, '3 digits one the back of your card'),
-(81841, 1, 21855, 'Expiration date'),
-(81842, 1, 21856, 'Specify the exact date'),
-(81843, 1, 21857, 'Name on card'),
-(81844, 1, 21858, 'Specify your card name'),
-(81845, 1, 21859, 'Country'),
-(81846, 1, 21860, 'Your country'),
-(81847, 1, 21861, 'Address line'),
-(81848, 1, 21862, 'Specify your address'),
-(81849, 1, 21863, 'ZIP code'),
-(81850, 1, 21864, 'Specify your zip code'),
-(81851, 1, 21865, 'State'),
-(81852, 1, 21866, 'Your state'),
-(81853, 1, 21867, 'Information'),
-(81854, 1, 21868, 'Profile cannot be viewed'),
-(81855, 1, 21869, 'Location issue!'),
-(81856, 1, 21870, 'Don’t forget to enable location detection on your smartphone to see potential matches.'),
-(81857, 1, 21871, 'Check location'),
-(81858, 1, 21872, 'SkaDate Mobile Application requires installation of the following plugins: {$plugins}'),
-(81859, 1, 21873, 'SkaDate Mobile Application requires the <a href=\"{$url}\">push notifications</a> settings to be set'),
-(81860, 1, 21874, 'SkaDate Mobile Application requires the <a href=\"{$url}\">google map API key</a> to be set'),
-(81861, 1, 21875, 'SkaDate Mobile Application requires the <a href=\"{$url}\">monetizations</a> settings to be set'),
-(81862, 1, 21876, 'Search mode'),
-(81863, 1, 21877, 'Tinder mode + Browse users'),
-(81864, 1, 21878, 'Tinder mode'),
-(81865, 1, 21879, 'Browse users'),
-(81866, 1, 21880, 'Buy Upgrades'),
-(81867, 1, 21881, 'No internet connection'),
-(81868, 1, 21882, 'Back to starter page'),
-(81869, 1, 21883, 'You and {{userName}} liked each other'),
-(81870, 1, 21884, 'It\'s a Match!'),
-(81871, 1, 21885, 'Compatible users'),
-(81872, 1, 21886, 'No people in your hot list'),
-(81873, 1, 21887, 'Profile removed from guests'),
-(81874, 1, 21888, 'Are you sure you want to delete this user from guest list?'),
-(81875, 1, 21889, 'Guests'),
-(81876, 1, 21890, 'Are you sure you want to delete this user from bookmark list?'),
-(81877, 1, 21891, 'Unmark'),
-(81878, 1, 21892, 'Keep playing'),
-(81879, 1, 21893, 'Send message'),
-(81880, 1, 21894, 'Bookmarks'),
-(81881, 1, 21895, '{{count}} credits removed from your credit balance.'),
-(81882, 1, 21896, '{{count}} credits added to your credit balance.'),
-(81883, 1, 21897, 'Your profile will be added to Hot List for {{count}} credits.'),
-(81884, 1, 21898, 'Are you sure you want to delete your profile from Hot List list?'),
-(81885, 1, 21899, 'Are you hot too?'),
-(81886, 1, 21900, 'Remove from Hot List'),
-(81887, 1, 21901, 'Unread messages'),
-(81888, 1, 21902, 'Please upgrade to start/continue chat dialog'),
-(81889, 1, 21903, 'Maintenance mode is enabled'),
-(81890, 1, 21904, 'You have to verify your email'),
-(81891, 1, 21905, 'Please fill the fields below to complete your profile.'),
-(81892, 1, 21906, 'You have to complete your profile type'),
-(81893, 1, 21907, 'You have to complete your profile'),
-(81894, 1, 21908, 'Your profile is disapproved'),
-(81895, 1, 21909, 'Your profile is suspended'),
-(81896, 1, 21910, 'Wink was received'),
-(81897, 1, 21911, 'Wink was sent'),
-(81898, 1, 21912, 'Start Conversation. Type right here, right now!'),
-(81899, 1, 21913, 'Read the message'),
-(81900, 1, 21914, 'Please upgrade to read chat messages'),
-(81901, 1, 21915, 'You do not have enough permissions to read this message'),
-(81902, 1, 21916, 'Resend'),
-(81903, 1, 21917, 'Are you sure you want to delete this message?'),
-(81904, 1, 21918, 'Delete'),
-(81905, 1, 21919, 'Send'),
-(81906, 1, 21920, 'Conversation has been marked as read'),
-(81907, 1, 21921, 'Conversation has been marked as unread'),
-(81908, 1, 21922, 'Conversation has been deleted'),
-(81909, 1, 21923, 'Mark as unread'),
-(81910, 1, 21924, 'Mark as read'),
-(81911, 1, 21925, 'Delete conversation'),
-(81912, 1, 21926, 'Are you sure you want to delete this conversation?'),
-(81913, 1, 21927, 'New message'),
-(81914, 1, 21928, 'No results found'),
-(81915, 1, 21929, 'Say Hello'),
-(81916, 1, 21930, 'Tap on a new match to send message'),
-(81917, 1, 21931, 'No One\'s Here Yet'),
-(81918, 1, 21932, 'First, let\'s find someone you like!'),
-(81919, 1, 21933, 'New Messages'),
-(81920, 1, 21934, 'New Matches'),
-(81921, 1, 21935, 'Manage photos'),
-(81922, 1, 21936, 'View all photos'),
-(81923, 1, 21937, 'Profile added to bookmarks'),
-(81924, 1, 21938, 'Profile removed from bookmarks'),
-(81925, 1, 21939, 'Flag'),
-(81926, 1, 21940, 'Profile blocked'),
-(81927, 1, 21941, 'Profile unblocked'),
-(81928, 1, 21942, 'Are you sure you want to block this user? This will cancel and prevent all interaction with you'),
-(81929, 1, 21943, 'Block'),
-(81930, 1, 21944, 'Unblock'),
-(81931, 1, 21945, 'Photo reported'),
-(81932, 1, 21946, 'Profile reported'),
-(81933, 1, 21947, 'Flag this as'),
-(81934, 1, 21948, 'Illegal'),
-(81935, 1, 21949, 'Offence'),
-(81936, 1, 21950, 'SPAM'),
-(81937, 1, 21951, 'Flag profile'),
-(81938, 1, 21952, 'Flag photo'),
-(81939, 1, 21953, 'Compatibility'),
-(81940, 1, 21954, 'Like'),
-(81941, 1, 21955, '\"{{name}}\" will be added to My Likes.'),
-(81942, 1, 21956, 'Dislike'),
-(81943, 1, 21957, '\"{{name}}\" will be temporary removed from search results.'),
-(81944, 1, 21958, 'Upgrade'),
-(81945, 1, 21959, 'You don\'t have enough permissions'),
-(81946, 1, 21960, 'No people found'),
-(81947, 1, 21961, 'Please try different search for more results'),
-(81948, 1, 21962, '{{value}} mile(s) away'),
-(81949, 1, 21963, '{{value}} km away'),
-(81950, 1, 21964, 'within {{value}} mile'),
-(81951, 1, 21965, 'within {{value}} km'),
-(81952, 1, 21966, 'With photo'),
-(81953, 1, 21967, 'Online only'),
-(81954, 1, 21968, 'Advanced search'),
-(81955, 1, 21969, 'Search filter'),
-(81956, 1, 21970, 'Search filter'),
-(81957, 1, 21971, 'Oops. Something went wrong.'),
-(81958, 1, 21972, 'Please try again later'),
-(81959, 1, 21973, 'Avatar is not approved. Please wait'),
-(81960, 1, 21974, '{{photos}} photo(s) are not approved. Please wait'),
-(81961, 1, 21975, 'Avatar and {{photos}} photo(s) are not approved. Please wait'),
-(81962, 1, 21976, 'You don\'t have permissions'),
-(81963, 1, 21977, 'To continue you should upgrade your Membership or buy more credits'),
-(81964, 1, 21978, 'Purchase'),
-(81965, 1, 21979, 'Manage photos'),
-(81966, 1, 21980, 'You have set the avatar'),
-(81967, 1, 21981, 'Photo has been deleted'),
-(81968, 1, 21982, 'Avatar has been deleted'),
-(81969, 1, 21983, 'Avatar has been uploaded'),
-(81970, 1, 21984, 'Photo has been uploaded'),
-(81971, 1, 21985, 'Yes'),
-(81972, 1, 21986, 'Nope'),
-(81973, 1, 21987, 'Are you sure you want to delete this photo?'),
-(81974, 1, 21988, 'Are you sure you want to delete this avatar?'),
-(81975, 1, 21989, 'Delete avatar'),
-(81976, 1, 21990, 'Delete photo'),
-(81977, 1, 21991, 'Upload photo'),
-(81978, 1, 21992, 'Set avatar'),
-(81979, 1, 21993, 'Change site url'),
-(81980, 1, 21994, 'Change site url'),
-(81981, 1, 21995, 'Invalid site url'),
-(81982, 1, 21996, 'www.site.com'),
-(81983, 1, 21997, 'Enter site URL'),
-(81984, 1, 21998, 'Select value'),
-(81985, 1, 21999, 'Complete your profile'),
-(81986, 1, 22000, 'Complete your profile'),
-(81987, 1, 22001, 'Basic information'),
-(81988, 1, 22002, 'Privacy Policy'),
-(81989, 1, 22003, 'Terms of Use'),
-(81990, 1, 22004, 'Delete account'),
-(81991, 1, 22005, 'If you delete your account, you will permanently lose your profile, messages, photos and matches.\n        If you\'d rather keep your account but simply hide your card you can disable discovery instead.\n        Are you sure you want to delete your account?'),
-(81992, 1, 22006, 'Profile has been updated'),
-(81993, 1, 22007, 'Edit'),
-(81994, 1, 22008, 'Logout'),
-(81995, 1, 22009, 'Edit profile'),
-(81996, 1, 22010, '<h1>Under maintenance.</h1><p>Sorry, the site is undergoing planned maintenance. We\'ll be back soon.</p>'),
-(81997, 1, 22011, 'Your account is pending approval'),
-(81998, 1, 22012, 'Sorry your account is suspended. Please contact the site administrator.'),
-(81999, 1, 22013, 'Reason'),
-(82000, 1, 22014, 'Close'),
-(82001, 1, 22015, 'I agree with terms of use'),
-(82002, 1, 22016, 'Please check the terms of use'),
-(82003, 1, 22017, '<p>\r\n        Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern our relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.\r\n        </p>\r\n        <p>\r\n        The term \'website\' or \'us\' or \'we\' refers to the owner of the website. The term \'user\' refers to the website visitor.\r\n        </p>\r\n        <p>\r\n        The use of this website is subject to the following terms of use:\r\n        </p>\r\n        <ul>\r\n        <li>\r\n        The content of the pages of this website is for user’s general information and use only. It is subject to change without notice.\r\n        </li>\r\n        <li>\r\n        User acknowledges that neither we nor any third parties provide any warranties while the user is using this website for any particular purpose. We expressly exclude liability for any possible harm to the fullest extent permitted by law.\r\n        </li>\r\n        <li>\r\n        User’s use of any information or materials on this website is entirely at their own risk, for which we shall not be liable. It shall be user’s own responsibility to ensure that any products, services or information available through this website meet user’s specific requirements.\r\n        </li>\r\n        <li>\r\n        This website contains material that may be owned by or licensed to us. This material includes, but is not limited to the design, layout, look, appearance and graphics. Reproduction is prohibited other than upon receiving explicit permission.\r\n        </li>\r\n        <li>\r\n        Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence.\r\n        </li>\r\n        <li>\r\n        This website may also include links to other websites. These links are provided for user’s convenience to provide further information. They do not signify that we endorse said website(s). We have no responsibility for the content of the linked website(s).\r\n        </li>\r\n        <li>\r\n        User agrees not to submit illegal content to this website, and agree to warn website owners after seeing other users doing it.\r\n        </li>\r\n        </ul>'),
-(82004, 1, 22018, 'Terms of use'),
-(82005, 1, 22019, 'Terms of use'),
-(82006, 1, 22020, 'Privacy Policy'),
-(82007, 1, 22021, '<p>\n        Thank you for visiting our website. This privacy policy tells you how we use personal information collected at this website. Please read this privacy policy before using the website or submitting any personal information. By using this website, you are accepting the practices described in this privacy policy. These practices may be changed, but any changes will be posted and will only apply to activities and information on a going forward, not retroactive basis. You are encouraged to review the privacy policy whenever you visit the site to keep track of the policy changes and make sure that you understand howany personal information you provide will be used.\n        </p>\n        <p>\n        Note: the privacy practices set forth in this privacy policy are for this website only. If you link to other websites, please review the privacy policies posted at those websites.\n        </p>\n\n        <h2\">Collection of Information</h2>\n\n        <p class=\"ow_stdmargin\">\n        We collect personally identifiable information, like names, email addresses, etc., when voluntarily submitted by our visitors. This information is only used to fulfill your specific request, and to sign you up for our service mailing list, unless you give us permission to use it in other manners.\n        </p>\n\n        <h2>Cookie/Tracking Technology</h2>\n\n        <p>\n        This website may use cookie and tracking technology depending on the features offered. Cookie and tracking technology are useful for gathering information such as browser type and operating system, tracking the number of visitors to the website, and understanding how visitors use the website. Cookies can also help customize the website for visitors. Personal information cannotbe collected via cookies and other tracking technology, however, if you previously providedpersonally identifiable information, cookies may be tied to such information. Aggregate cookie and tracking information may be shared with third parties.\n        </p>\n\n        <h2>Distribution of Information</h2>\n\n        <p>\n        We may share information with governmental agencies or other companies assisting us in fraud prevention or investigation. We may do so when: (1) permitted or required by law; or, (2) trying to protect against or prevent actual or potential fraud or unauthorized transactions; or, (3) investigating fraud which has already taken place. The information is not provided to these companies for marketing purposes.\n        </p>\n\n        <h2>Commitment to Data Security</h2>\n\n        <p>\n        Your personally identifiable information is kept secure. Only authorized employees, agents and contractors (who have agreed to keep information secure and confidential) have access to this information. All emails and newsletters from this website allow you to opt out of further mailings.\n        </p>\n\n        <h2>Privacy Contact Information</h2>\n\n        <p>\n        If you have any questions, concerns, or comments about our privacy policy you may contact us using means provided on this website. We reserve the right to make changes to this policy. Any changes to this policy will be posted.\n        </p>'),
-(82008, 1, 22022, 'Wrong URL format'),
-(82009, 1, 22023, 'Choose location'),
-(82010, 1, 22024, 'City/Town/Zip'),
-(82011, 1, 22025, 'Search'),
-(82012, 1, 22026, 'Looking For:'),
-(82013, 1, 22027, 'Sun, Mon, Tue, Wed, Thu, Fri, Sat'),
-(82014, 1, 22028, 'Sunday, Monday, Tuesday, Wednesday Thursday, Friday, Saturday'),
-(82015, 1, 22029, 'Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec'),
-(82016, 1, 22030, 'January, February, March, April, May, June, July, August, September, October, November, December'),
-(82017, 1, 22031, 'Choose date'),
-(82018, 1, 22032, 'Done'),
-(82019, 1, 22033, 'String is too long'),
-(82020, 1, 22034, 'String is too short'),
-(82021, 1, 22035, 'Password should have more than {{length}} characters'),
-(82022, 1, 22036, 'Password should have less than {{length}} characters'),
-(82023, 1, 22037, 'Cancel'),
-(82024, 1, 22038, 'Keep empty'),
-(82025, 1, 22039, 'Passwords do not match'),
-(82026, 1, 22040, 'Gender'),
-(82027, 1, 22041, 'Email'),
-(82028, 1, 22042, 'Type your email'),
-(82029, 1, 22043, 'Base'),
-(82030, 1, 22044, 'Repeat password'),
-(82031, 1, 22045, 'Repeat your password'),
-(82032, 1, 22046, 'Please choose an avatar'),
-(82033, 1, 22047, 'Password'),
-(82034, 1, 22048, 'Type the password'),
-(82035, 1, 22049, 'Username'),
-(82036, 1, 22050, 'Type your username'),
-(82037, 1, 22051, 'Add avatar'),
-(82038, 1, 22052, 'Next'),
-(82039, 1, 22053, 'Join'),
-(82040, 1, 22054, 'Back'),
-(82041, 1, 22055, 'Email is incorrect'),
-(82042, 1, 22056, 'Value cannot be empty'),
-(82043, 1, 22057, 'Email already used by another user or restricted'),
-(82044, 1, 22058, 'Username already used or restricted'),
-(82045, 1, 22059, 'Error while uploading the file'),
-(82046, 1, 22060, 'Alowed file types are: {{mimeTypes}}'),
-(82047, 1, 22061, 'Your file ({{fileSize}} Mb) exceeds the max upload file size ({{allowedSize}} Mb)'),
-(82048, 1, 22062, 'Login'),
-(82049, 1, 22063, 'Sign up'),
-(82050, 1, 22064, 'Invalid email'),
-(82051, 1, 22065, 'Your password successfully updated'),
-(82052, 1, 22066, 'Email'),
-(82053, 1, 22067, 'Type your email'),
-(82054, 1, 22068, 'Code'),
-(82055, 1, 22069, 'Type the reset code'),
-(82056, 1, 22070, 'Please enter the valid reset code'),
-(82057, 1, 22071, 'Type the email address you used during the registration.'),
-(82058, 1, 22072, 'Type the Reset Code sent to you. This will allow you to change the password.'),
-(82059, 1, 22073, 'Enter and confirm your new password below.'),
-(82060, 1, 22074, 'Username/Email'),
-(82061, 1, 22075, 'New password'),
-(82062, 1, 22076, 'Type in new password'),
-(82063, 1, 22077, 'Invalid username or email'),
-(82064, 1, 22078, 'Error occurred'),
-(82065, 1, 22079, 'OK'),
-(82066, 1, 22080, 'Forgot password'),
-(82067, 1, 22081, 'Forgot password'),
-(82068, 1, 22082, 'Reset password request'),
-(82069, 1, 22083, 'Reset your password'),
-(82070, 1, 22084, 'Ad Unit ID'),
-(82071, 1, 22085, 'Enabled'),
-(82072, 1, 22086, 'To activate AdMob you need to indicate your Ad Unit ID. <a href=\"https://hello.skadate.com/docs/manuals/admob_android\" target=\"_blank\">Click here for Android</a> or <a href=\"https://hello.skadate.com/docs/manuals/admob_ios\" target=\"_blank\">click here for IOS</a> to learn how to acquire it.'),
-(82073, 1, 22087, 'Save'),
-(82074, 1, 22088, 'Admob network'),
-(82075, 1, 22089, 'ADS'),
-(82076, 1, 22090, 'Settings'),
-(82077, 1, 22091, 'Or connect via'),
-(82078, 1, 22092, 'Back to starter page'),
-(82079, 1, 22093, 'A verification code was sent to you. Please check your mail and enter the received verification code below'),
-(82080, 1, 22094, 'Please enter your email below to receive the new verification code'),
-(82081, 1, 22095, 'Resend'),
-(82082, 1, 22096, 'Done'),
-(82083, 1, 22097, 'Enter email address'),
-(82084, 1, 22098, 'Type your email address'),
-(82085, 1, 22099, 'Enter ver. code'),
-(82086, 1, 22100, 'Type the code'),
-(82087, 1, 22101, 'Please enter the valid verification code'),
-(82088, 1, 22102, 'Registration successful'),
-(82089, 1, 22103, 'Your account has been verified'),
-(82090, 1, 22104, 'Verification mail has been sent to {{email}}'),
-(82091, 1, 22105, 'I didn\'t receive any email with a verification code'),
-(82092, 1, 22106, 'Push notifications'),
-(82093, 1, 22107, 'Enabled'),
-(82094, 1, 22108, 'Sender id'),
-(82095, 1, 22109, 'Sender id is a unique identifier that you generate using the Firebase Developers Console. It is used to deliver notifications using Firebase Cloud Messaging.'),
-(82096, 1, 22110, 'Server key'),
-(82097, 1, 22111, 'API key is a unique identifier that you generate using the Firebase Developers Console. It is used to deliver notifications using Firebase Cloud Messaging.'),
-(82098, 1, 22112, 'Mode'),
-(82099, 1, 22113, 'Test'),
-(82100, 1, 22114, 'Live'),
-(82101, 1, 22115, 'APNS certificate'),
-(82102, 1, 22116, 'SSL certificate ( *.pem ) that your push server uses to make a secure connection to APNS'),
-(82103, 1, 22117, 'Pass phrase used to protect the certificate.'),
-(82104, 1, 22118, 'Certificate passphrase'),
-(82105, 1, 22119, 'Submit'),
-(82106, 1, 22120, '{$username}: {$message}'),
-(82107, 1, 22121, 'Message'),
-(82108, 1, 22122, 'New match'),
-(82109, 1, 22123, 'Congratulations! You have a new match!'),
-(82110, 1, 22124, 'Memberships'),
-(82111, 1, 22125, 'No memberships to upgrade'),
-(82112, 1, 22126, 'No credit pack to buy'),
-(82113, 1, 22127, 'Credits'),
-(82114, 1, 22128, 'Credits rewards'),
-(82115, 1, 22129, 'No info available for the current credit rewards page'),
-(82116, 1, 22130, 'Your Membership'),
-(82117, 1, 22131, 'Recurring'),
-(82118, 1, 22132, 'Your Credits'),
-(82119, 1, 22133, 'Monetization'),
-(82120, 1, 22134, 'Public Key'),
-(82121, 1, 22135, 'Your application stores the public key in its compiled .apk file and uses it to verify the licensing status response. <a href=\"https://developer.android.com/google/play/licensing/index.html\">Learn more</a>'),
-(82122, 1, 22136, 'Itunes Shared Secret'),
-(82123, 1, 22137, 'For information about incorporating the shared secret into your app’s receipt handling, see <a href=\"https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Introduction.html#//apple_ref/doc/uid/TP40010573\">Receipt Validation Programming Guide.</a>'),
-(82124, 1, 22138, 'Itunes Test Mode'),
-(82125, 1, 22139, 'Save'),
-(82126, 1, 22140, 'Edit profile'),
-(82127, 1, 22141, 'Settings'),
-(82128, 1, 22142, 'My guests'),
-(82129, 1, 22143, 'Bookmarks'),
-(82130, 1, 22144, 'My compatible users'),
-(82131, 1, 22145, 'Buy upgrades'),
-(82132, 1, 22146, 'General'),
-(82133, 1, 22147, 'Android'),
-(82134, 1, 22148, 'IOS'),
-(82135, 1, 22149, 'Settings'),
-(82136, 1, 22150, 'App promotion'),
-(82137, 1, 22151, 'iOS App Url'),
-(82138, 1, 22152, 'Android App Url'),
-(82139, 1, 22153, 'Save'),
-(82140, 1, 22154, 'Settings saved'),
-(82141, 1, 22155, 'Generic App URL by default'),
-(82142, 1, 22156, 'Package name'),
-(82143, 1, 22157, 'Package name of your app'),
-(82144, 1, 22158, 'Private key file'),
-(82145, 1, 22159, '<a href=\"https://hello.skadate.com/docs/faq/site_configuration/android-in-app-purchases#skadate-admin-area\">Click here</a> to find instructions on how to get private key file.'),
-(82146, 1, 22160, '(Android)'),
-(82147, 1, 22161, '(iOS)'),
-(82148, 1, 22162, 'Private key'),
-(82149, 1, 22163, 'Client email'),
-(82150, 1, 22164, 'Invalid android service account key'),
-(82151, 1, 22165, 'Google map API Key'),
-(82152, 1, 22166, '<b>This is required field.</b>\n        <br/>\n        Follow this <a href=\"https://developers.google.com/places/web-service/autocomplete\">link</a> to read more information'),
-(82153, 1, 22167, 'Mobile applications');
+(81770, 1, 21784, 'Save');
 
 -- --------------------------------------------------------
 
@@ -16917,7 +16120,7 @@ CREATE TABLE `ow_base_login_cookie` (
 --
 
 INSERT INTO `ow_base_login_cookie` (`id`, `userId`, `cookie`) VALUES
-(1, 1, '04d1dd0aa24a60d53fea6633abbadd9d');
+(1, 1, 'bba64b73dc957520f62592255a9c32b7');
 
 -- --------------------------------------------------------
 
@@ -17169,8 +16372,7 @@ INSERT INTO `ow_base_plugin` (`id`, `title`, `description`, `module`, `key`, `de
 (854, 'Custom index', 'Plugin adds customized index page', 'customindex', 'customindex', '99d6bdd5bb6468beaf118c4664dd92ff', 0, 1, 'customindex.admin', NULL, 1, 0, NULL, NULL),
 (857, 'Stripe Billing', 'Accept payments from users with Stripe payment provider', 'billing_stripe', 'billingstripe', '99d6bdd5bb6468beaf118c4664dd92ff', 0, 0, 'billingstripe.admin', NULL, 10815, 0, NULL, NULL),
 (855, 'Video Instant Messenger', 'Standalone video chat module to enable private video conversations between two users, based on WebRTC technology.', 'videoim', 'videoim', '99d6bdd5bb6468beaf118c4664dd92ff', 0, 0, 'videoim_admin_config', NULL, 10820, 0, NULL, NULL),
-(859, 'GDPR', 'The General Data Protection Regulation module gives end user visibility to the data stored about themself and aims to help site admins follow the guidelines and legislation set by the EU.', 'gdpr', 'gdpr', '99d6bdd5bb6468beaf118c4664dd92ff', 0, 0, 'gdpr-admin-index', NULL, 2, 0, NULL, NULL),
-(861, 'SkaDate Mobile Application', 'iOS and Android App Settings', 'skmobileapp', 'skmobileapp', '99d6bdd5bb6468beaf118c4664dd92ff', 0, 1, 'skmobileapp_admin_ads', NULL, 11080, 0, NULL, NULL);
+(859, 'GDPR', 'The General Data Protection Regulation module gives end user visibility to the data stored about themself and aims to help site admins follow the guidelines and legislation set by the EU.', 'gdpr', 'gdpr', '99d6bdd5bb6468beaf118c4664dd92ff', 0, 0, 'gdpr-admin-index', NULL, 2, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -17208,9 +16410,7 @@ INSERT INTO `ow_base_preference` (`id`, `key`, `defaultValue`, `sectionName`, `s
 (32, 'timeZoneSelect', 'null', 'general', 1),
 (33, 'matchmaking_distance_from_my_location', '10', 'matchmaking', 1),
 (34, 'fbconnect_user_credits', '0', 'general', 1),
-(38, 'videoim_decline_calls', '0', 'videoim', 1),
-(39, 'skmobileapp_new_matches_push', 'true', 'skmobileapp_pushes', 1),
-(40, 'skmobileapp_new_messages_push', 'true', 'skmobileapp_pushes', 2);
+(38, 'videoim_decline_calls', '0', 'videoim', 1);
 
 -- --------------------------------------------------------
 
@@ -17253,8 +16453,7 @@ INSERT INTO `ow_base_preference_section` (`id`, `name`, `sortOrder`) VALUES
 (13, 'im', 0),
 (15, 'ajaxim', 0),
 (17, 'matchmaking', 0),
-(19, 'videoim', -1),
-(20, 'skmobileapp_pushes', -1);
+(19, 'videoim', -1);
 
 -- --------------------------------------------------------
 
@@ -17949,7 +17148,8 @@ INSERT INTO `ow_base_site_statistic` (`id`, `entityType`, `entityId`, `entityCou
 (25, 'user_login', 1, 1, 1585304924),
 (26, 'user_login', 1, 1, 1585308310),
 (27, 'user_login', 1, 1, 1585311829),
-(28, 'user_login', 1, 1, 1586154523);
+(28, 'user_login', 1, 1, 1586154523),
+(29, 'user_login', 1, 1, 1586234962);
 
 -- --------------------------------------------------------
 
@@ -18875,7 +18075,7 @@ CREATE TABLE `ow_base_user` (
 --
 
 INSERT INTO `ow_base_user` (`id`, `email`, `username`, `password`, `joinStamp`, `activityStamp`, `accountType`, `emailVerify`, `joinIp`) VALUES
-(1, 'test@test.com', 'tester', '21e45eeb5e27a2cae8f1f561a3873d48d77800668d6e39d1f4d7a67e8f393af6', 0, 1586154525, '8cc28eaddb382d7c6a94aeea9ec029fb', 1, 0);
+(1, 'test@test.com', 'tester', '21e45eeb5e27a2cae8f1f561a3873d48d77800668d6e39d1f4d7a67e8f393af6', 0, 1586235158, '8cc28eaddb382d7c6a94aeea9ec029fb', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -18942,7 +18142,7 @@ CREATE TABLE `ow_base_user_online` (
 --
 
 INSERT INTO `ow_base_user_online` (`id`, `userId`, `activityStamp`, `context`) VALUES
-(11, 1, 1586154525, 1);
+(12, 1, 1586235158, 1);
 
 -- --------------------------------------------------------
 
@@ -19565,7 +18765,7 @@ CREATE TABLE `ow_mailbox_user_last_data` (
 INSERT INTO `ow_mailbox_user_last_data` (`id`, `userId`, `data`) VALUES
 (3, 0, '{\"userOnlineCount\":0,\"userList\":[],\"conversationsCount\":0,\"convList\":[]}'),
 (4, 0, '{\"userOnlineCount\":0,\"userList\":[],\"conversationsCount\":0,\"convList\":[]}'),
-(29, 1, '{\"userOnlineCount\":0,\"userList\":[],\"conversationsCount\":0,\"convList\":[]}');
+(31, 1, '{\"userOnlineCount\":0,\"userList\":[],\"conversationsCount\":0,\"convList\":[]}');
 
 -- --------------------------------------------------------
 
@@ -19873,13 +19073,6 @@ CREATE TABLE `ow_notifications_send_queue` (
   `timeStamp` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `ow_notifications_send_queue`
---
-
-INSERT INTO `ow_notifications_send_queue` (`id`, `userId`, `timeStamp`) VALUES
-(9, 1, 1585311828);
-
 -- --------------------------------------------------------
 
 --
@@ -20162,108 +19355,6 @@ CREATE TABLE `ow_skadate_speedmatch_relation` (
   `oppUserId` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `addTimestamp` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `ow_skmobileapp_device`
---
-
-CREATE TABLE `ow_skmobileapp_device` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `userId` int(11) UNSIGNED NOT NULL,
-  `deviceUuid` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `platform` varchar(10) NOT NULL,
-  `activityTime` int(11) UNSIGNED DEFAULT NULL,
-  `language` varchar(10) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `ow_skmobileapp_expiration_purchase`
---
-
-CREATE TABLE `ow_skmobileapp_expiration_purchase` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `membershipId` int(11) UNSIGNED NOT NULL,
-  `typeId` int(11) NOT NULL,
-  `userId` int(11) NOT NULL,
-  `expirationTime` int(11) NOT NULL,
-  `counter` tinyint(4) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `ow_skmobileapp_inapps_purchase`
---
-
-CREATE TABLE `ow_skmobileapp_inapps_purchase` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `membershipId` int(11) UNSIGNED NOT NULL,
-  `saleId` int(11) UNSIGNED NOT NULL,
-  `platform` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `ow_skmobileapp_user_location`
---
-
-CREATE TABLE `ow_skmobileapp_user_location` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `userId` int(11) UNSIGNED NOT NULL,
-  `latitude` decimal(15,4) NOT NULL,
-  `longitude` decimal(15,4) NOT NULL,
-  `northEastLatitude` decimal(15,4) NOT NULL,
-  `northEastLongitude` decimal(15,4) NOT NULL,
-  `southWestLatitude` decimal(15,4) NOT NULL,
-  `southWestLongitude` decimal(15,4) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `ow_skmobileapp_user_location`
---
-
-INSERT INTO `ow_skmobileapp_user_location` (`id`, `userId`, `latitude`, `longitude`, `northEastLatitude`, `northEastLongitude`, `southWestLatitude`, `southWestLongitude`) VALUES
-(1, 1, '42.8220', '74.6180', '42.8310', '74.6302', '42.8130', '74.6058');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `ow_skmobileapp_user_match_action`
---
-
-CREATE TABLE `ow_skmobileapp_user_match_action` (
-  `id` int(11) NOT NULL,
-  `userId` int(11) NOT NULL,
-  `recipientId` int(11) NOT NULL,
-  `type` varchar(20) NOT NULL,
-  `createStamp` int(11) NOT NULL,
-  `expirationStamp` int(11) NOT NULL,
-  `mutual` tinyint(1) NOT NULL DEFAULT '0',
-  `read` tinyint(1) NOT NULL DEFAULT '0',
-  `new` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `ow_skmobileapp_web_push`
---
-
-CREATE TABLE `ow_skmobileapp_web_push` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `userId` int(11) UNSIGNED NOT NULL,
-  `deviceId` int(11) UNSIGNED NOT NULL,
-  `title` text NOT NULL,
-  `message` text NOT NULL,
-  `pushParams` varchar(255) DEFAULT NULL,
-  `expirationTime` int(11) UNSIGNED NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -21825,58 +20916,6 @@ ALTER TABLE `ow_skadate_speedmatch_relation`
   ADD KEY `userId` (`userId`);
 
 --
--- Индексы таблицы `ow_skmobileapp_device`
---
-ALTER TABLE `ow_skmobileapp_device`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `token` (`token`),
-  ADD KEY `userId` (`userId`),
-  ADD KEY `activityTime` (`activityTime`);
-
---
--- Индексы таблицы `ow_skmobileapp_expiration_purchase`
---
-ALTER TABLE `ow_skmobileapp_expiration_purchase`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `membershipId` (`membershipId`),
-  ADD KEY `userId` (`userId`),
-  ADD KEY `expirationTime` (`expirationTime`);
-
---
--- Индексы таблицы `ow_skmobileapp_inapps_purchase`
---
-ALTER TABLE `ow_skmobileapp_inapps_purchase`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `membershipId` (`membershipId`),
-  ADD KEY `saleId` (`saleId`),
-  ADD KEY `platform` (`membershipId`,`platform`);
-
---
--- Индексы таблицы `ow_skmobileapp_user_location`
---
-ALTER TABLE `ow_skmobileapp_user_location`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `userId` (`userId`),
-  ADD KEY `userLocation` (`userId`,`southWestLatitude`,`northEastLatitude`);
-
---
--- Индексы таблицы `ow_skmobileapp_user_match_action`
---
-ALTER TABLE `ow_skmobileapp_user_match_action`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `userMatch` (`userId`,`recipientId`),
-  ADD KEY `expiration` (`userId`,`recipientId`,`type`,`expirationStamp`),
-  ADD KEY `mutual` (`userId`,`type`,`mutual`);
-
---
--- Индексы таблицы `ow_skmobileapp_web_push`
---
-ALTER TABLE `ow_skmobileapp_web_push`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `userId` (`userId`,`deviceId`),
-  ADD KEY `expirationTime` (`expirationTime`);
-
---
 -- Индексы таблицы `ow_slideshow_slide`
 --
 ALTER TABLE `ow_slideshow_slide`
@@ -22035,7 +21074,7 @@ ALTER TABLE `ow_base_avatar`
 -- AUTO_INCREMENT для таблицы `ow_base_billing_gateway`
 --
 ALTER TABLE `ow_base_billing_gateway`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_billing_gateway_config`
@@ -22089,7 +21128,7 @@ ALTER TABLE `ow_base_comment_entity`
 -- AUTO_INCREMENT для таблицы `ow_base_component`
 --
 ALTER TABLE `ow_base_component`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=900;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=910;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_component_entity_place`
@@ -22113,19 +21152,19 @@ ALTER TABLE `ow_base_component_entity_setting`
 -- AUTO_INCREMENT для таблицы `ow_base_component_place`
 --
 ALTER TABLE `ow_base_component_place`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100924;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100944;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_component_place_cache`
 --
 ALTER TABLE `ow_base_component_place_cache`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_component_position`
 --
 ALTER TABLE `ow_base_component_position`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11761;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11841;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_component_setting`
@@ -22137,13 +21176,13 @@ ALTER TABLE `ow_base_component_setting`
 -- AUTO_INCREMENT для таблицы `ow_base_config`
 --
 ALTER TABLE `ow_base_config`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=963;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=985;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_cron_job`
 --
 ALTER TABLE `ow_base_cron_job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2735;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2804;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_db_cache`
@@ -22209,19 +21248,19 @@ ALTER TABLE `ow_base_language`
 -- AUTO_INCREMENT для таблицы `ow_base_language_key`
 --
 ALTER TABLE `ow_base_language_key`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22168;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22551;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_language_prefix`
 --
 ALTER TABLE `ow_base_language_prefix`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=324;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=325;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_language_value`
 --
 ALTER TABLE `ow_base_language_value`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82154;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82537;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_log`
@@ -22281,13 +21320,13 @@ ALTER TABLE `ow_base_place_scheme`
 -- AUTO_INCREMENT для таблицы `ow_base_plugin`
 --
 ALTER TABLE `ow_base_plugin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=862;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=863;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_preference`
 --
 ALTER TABLE `ow_base_preference`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_preference_data`
@@ -22299,7 +21338,7 @@ ALTER TABLE `ow_base_preference_data`
 -- AUTO_INCREMENT для таблицы `ow_base_preference_section`
 --
 ALTER TABLE `ow_base_preference_section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_question`
@@ -22401,7 +21440,7 @@ ALTER TABLE `ow_base_sitemap`
 -- AUTO_INCREMENT для таблицы `ow_base_site_statistic`
 --
 ALTER TABLE `ow_base_site_statistic`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_tag`
@@ -22479,7 +21518,7 @@ ALTER TABLE `ow_base_user_featured`
 -- AUTO_INCREMENT для таблицы `ow_base_user_online`
 --
 ALTER TABLE `ow_base_user_online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_base_user_reset_password`
@@ -22701,7 +21740,7 @@ ALTER TABLE `ow_mailbox_message`
 -- AUTO_INCREMENT для таблицы `ow_mailbox_user_last_data`
 --
 ALTER TABLE `ow_mailbox_user_last_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_matchmaking_question_match`
@@ -22930,42 +21969,6 @@ ALTER TABLE `ow_skadate_current_location`
 --
 ALTER TABLE `ow_skadate_speedmatch_relation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `ow_skmobileapp_device`
---
-ALTER TABLE `ow_skmobileapp_device`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `ow_skmobileapp_expiration_purchase`
---
-ALTER TABLE `ow_skmobileapp_expiration_purchase`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `ow_skmobileapp_inapps_purchase`
---
-ALTER TABLE `ow_skmobileapp_inapps_purchase`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `ow_skmobileapp_user_location`
---
-ALTER TABLE `ow_skmobileapp_user_location`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT для таблицы `ow_skmobileapp_user_match_action`
---
-ALTER TABLE `ow_skmobileapp_user_match_action`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `ow_skmobileapp_web_push`
---
-ALTER TABLE `ow_skmobileapp_web_push`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `ow_slideshow_slide`
