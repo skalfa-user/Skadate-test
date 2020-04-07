@@ -1,6 +1,7 @@
 Feature: User
     Test everything related with the main users functionality like join, login, search, etc
 
+    @work
     Scenario: Login
         Given Created user with id "1" and username "tester" and password "tester" and email "test@test.com"
         When I am on the app
@@ -19,6 +20,7 @@ Feature: User
         And I press "Logout"
         And I wait for ".sk-login" is visible "true"
         Then I should see "Forgot password"
+
 
     Scenario: Join
         Given Loaded sql data from "skmobileapp/join" with keys "[__api_key__]" and params "[AIzaSyBKARCA9bCuYmVt0WIJNvgZswUK_lp-QuY]"
