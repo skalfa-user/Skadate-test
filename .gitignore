@@ -16,6 +16,7 @@ ow_log/*
 ow_log/*
 ow_userfiles/*
 ow_pluginfiles/base/*
+!ow_pluginfiles/base/lang_1.php
 ow_static/themes
 ow_static/plugins/*
 !ow_static/plugins/admin
