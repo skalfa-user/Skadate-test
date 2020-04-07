@@ -41,7 +41,7 @@ addons:
     chrome: stable
 
 before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - google-chrome-stable --headless --disable-gpu http://localhost &
   - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
   - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   - sudo apt-get update
